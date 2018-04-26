@@ -51,4 +51,9 @@ class EditViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }

@@ -29,7 +29,11 @@ class ProfileViewController: UIViewController {
         }
     }
   
-   
+    @IBAction func editButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "ProfileToEdit", sender: self)
+
+    }
+    
     @IBAction func logoutButton(_ sender: Any) {
         if Auth.auth().currentUser != nil {
             do {
