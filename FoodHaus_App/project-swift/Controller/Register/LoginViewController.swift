@@ -10,13 +10,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Auth.auth().addStateDidChangeListener() { auth, user in
-            if user != nil {
-                self.performSegue(withIdentifier: "LoginToMenu", sender: self)
-            }
-        }
+//        Auth.auth().addStateDidChangeListener() { auth, user in
+//            if user != nil {
+//                self.performSegue(withIdentifier: "LoginToMenu", sender: self)
+//            }
+//        }
     }
     
+   
     
     //Login Action
     @IBAction func loginButton(_ sender: Any) {
@@ -36,7 +37,9 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 
                 if error == nil {
-                    self.performSegue(withIdentifier: "LoginToMenu", sender: self)
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    
                 } else {
                     
                     //Tells the user that there is an error and then gets firebase to tell them the error

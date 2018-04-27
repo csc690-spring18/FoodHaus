@@ -202,9 +202,9 @@
 		E8E5A9672089B14F0086F596 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				E845879C2088A9A800BCA13D /* SignUpViewController.swift */,
 				E84587982088A97900BCA13D /* LoginViewController.swift */,
 				E845879A2088A98F00BCA13D /* ResetPasswordViewController.swift */,
-				E845879C2088A9A800BCA13D /* SignUpViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";

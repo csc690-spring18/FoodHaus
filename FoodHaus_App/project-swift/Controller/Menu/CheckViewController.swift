@@ -41,5 +41,8 @@ class CheckViewController: UIViewController {
     
     @IBAction func cancelButton(_ sender: Any) {
         // Remove the list when user click cancel button
+        
+        // go back to root view controller
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

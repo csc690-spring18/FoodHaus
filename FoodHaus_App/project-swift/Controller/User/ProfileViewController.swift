@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
         
         // retrieve cur user's info from Database
         let userID = Auth.auth().currentUser?.uid
+        
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // get user value
             let value = snapshot.value as? NSDictionary
@@ -34,14 +35,6 @@ class ProfileViewController: UIViewController {
 
     }
     
-    @IBAction func logoutButton(_ sender: Any) {
-        if Auth.auth().currentUser != nil {
-            do {
-                try Auth.auth().signOut()
-                self.dismiss(animated: true, completion: nil)
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        }
-    }
+  
+    
 }

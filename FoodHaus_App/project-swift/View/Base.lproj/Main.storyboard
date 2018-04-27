@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lvd-S4-4DN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TOA-JD-WGB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Login-->
         <scene sceneID="I1c-TW-SCG">
             <objects>
-                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ch-p6-As5" customClass="LoginViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ch-p6-As5" customClass="LoginViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ikN-R5-Z6F"/>
                         <viewControllerLayoutGuide type="bottom" id="1RD-cd-cSE"/>
@@ -82,12 +82,11 @@
                     <connections>
                         <outlet property="emailTextField" destination="sy4-kQ-HMt" id="5fp-fN-HM9"/>
                         <outlet property="passwordTextField" destination="Kop-Aq-gzP" id="rBM-sr-HeK"/>
-                        <segue destination="TOA-JD-WGB" kind="presentation" identifier="LoginToMenu" id="VYR-Pt-Hbe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvl-1V-vtm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="1593.5532233883059"/>
+            <point key="canvasLocation" x="1916" y="2382"/>
         </scene>
         <!--Reset Password-->
         <scene sceneID="Wkh-gs-d8X">
@@ -135,12 +134,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1g-0g-5UH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98" y="2453"/>
+            <point key="canvasLocation" x="1849" y="3191"/>
         </scene>
         <!--SIgn Up-->
         <scene sceneID="lv8-WH-YbX">
             <objects>
-                <viewController storyboardIdentifier="SignUp" title="SIgn Up" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3VF-ZV-Ghe" customClass="SignUpViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SIgn Up" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3VF-ZV-Ghe" customClass="SignUpViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W1i-p6-8Qh"/>
                         <viewControllerLayoutGuide type="bottom" id="YZs-Yt-Nms"/>
@@ -199,12 +198,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncd-ri-EXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1423.2" y="2452.6236881559221"/>
+            <point key="canvasLocation" x="1054" y="3192"/>
         </scene>
-        <!--Confirm View Controller-->
+        <!--Successfully-->
         <scene sceneID="0JG-yL-l9v">
             <objects>
-                <viewController storyboardIdentifier="Confirm" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Is8-sS-DKr" customClass="ConfirmViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Successfully" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Is8-sS-DKr" customClass="ConfirmViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TP1-9s-JNS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,10 +216,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-dp-hgU">
-                                <rect key="frame" x="59" y="558" width="258" height="58"/>
+                                <rect key="frame" x="87" y="558" width="200" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                                <state key="normal" title="Back to Login page">
+                                <state key="normal" title="Back to menu">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -234,12 +233,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ei-Rr-OU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="2452.6236881559221"/>
+            <point key="canvasLocation" x="2905" y="2382"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rmI-3X-1H3">
             <objects>
-                <viewController storyboardIdentifier="Profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQ0-QE-QPZ" customClass="ProfileViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQ0-QE-QPZ" customClass="ProfileViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="flf-8i-74l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,17 +303,6 @@
                                 <rect key="frame" x="56" y="89" width="280" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAo-fA-ACT">
-                                <rect key="frame" x="56" y="570" width="280" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButton:" destination="rQ0-QE-QPZ" eventType="touchUpInside" id="IAw-9X-7uB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPa-qR-N1X">
                                 <rect key="frame" x="56" y="486" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -347,7 +335,7 @@
         <!--Edit-->
         <scene sceneID="evd-Aa-GTV">
             <objects>
-                <viewController storyboardIdentifier="Edit" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aap-Ca-a5V" customClass="EditViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aap-Ca-a5V" customClass="EditViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pJA-Ag-kqy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -446,7 +434,7 @@
         <!--FoodHaus-->
         <scene sceneID="AHe-Mk-HKA">
             <objects>
-                <viewController storyboardIdentifier="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="irp-gn-gzV" customClass="MenuViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="irp-gn-gzV" customClass="MenuViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wmb-69-xv4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,12 +442,21 @@
                         <viewLayoutGuide key="safeArea" id="pbu-vg-PdZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="FoodHaus" id="vnD-Lt-DfF">
+                        <barButtonItem key="leftBarButtonItem" title="User" id="jTR-lA-Rcp">
+                            <connections>
+                                <action selector="userButton:" destination="irp-gn-gzV" id="Yi8-rB-qCm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Check Out" id="jAh-24-KKE">
                             <connections>
-                                <segue destination="578-Ch-mxa" kind="show" id="eyg-Gk-eds"/>
+                                <action selector="CheckButton:" destination="irp-gn-gzV" id="UYX-9p-Zxj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="8bJ-M3-vFC" kind="show" identifier="MenuToLogin" id="CZq-Dp-rBg"/>
+                        <segue destination="578-Ch-mxa" kind="show" identifier="MenuToCheck" id="68c-9D-pHf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PmB-02-j4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -468,7 +465,7 @@
         <!--Check out-->
         <scene sceneID="hyf-h7-nDa">
             <objects>
-                <viewController storyboardIdentifier="Check" useStoryboardIdentifierAsRestorationIdentifier="YES" id="578-Ch-mxa" customClass="CheckViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="578-Ch-mxa" customClass="CheckViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GHg-Ef-EIz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -522,30 +519,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Is8-sS-DKr" kind="presentation" identifier="Successful" id="fpc-ww-Cen"/>
+                        <segue destination="Is8-sS-DKr" kind="show" identifier="Successful" id="Ken-Bd-BoI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dae-9D-mOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1916" y="1593.5532233883059"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Bqu-dc-uhX">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lvd-S4-4DN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wJp-cU-Upf">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7ch-p6-As5" kind="relationship" relationship="rootViewController" id="vHm-Aq-QN4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ZF-Vj-B0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1646" y="1594"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uNm-Qr-P1Q">
@@ -564,6 +543,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xn0-3A-iMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="199" y="1594"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VFx-Nj-8Sw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8bJ-M3-vFC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8a3-5v-yOn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7ch-p6-As5" kind="relationship" relationship="rootViewController" id="OfF-o5-Dc2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NeI-uX-A8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.5999999999999" y="2382.4587706146926"/>
         </scene>
     </scenes>
 </document>
