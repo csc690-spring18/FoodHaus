@@ -217,10 +217,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-dp-hgU">
-                                <rect key="frame" x="87" y="558" width="200" height="38"/>
+                                <rect key="frame" x="59" y="558" width="258" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                                <state key="normal" title="Back to menu">
+                                <state key="normal" title="Back to Login page">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -234,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ei-Rr-OU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="2453"/>
+            <point key="canvasLocation" x="1916" y="2452.6236881559221"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rmI-3X-1H3">
@@ -315,7 +315,6 @@
                                     <action selector="logoutButton:" destination="rQ0-QE-QPZ" eventType="touchUpInside" id="IAw-9X-7uB"/>
                                 </connections>
                             </button>
-
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPa-qR-N1X">
                                 <rect key="frame" x="56" y="486" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -328,26 +327,22 @@
                                     <action selector="editButton:" destination="rQ0-QE-QPZ" eventType="touchUpInside" id="Ndx-gH-jhk"/>
                                 </connections>
                             </button>
-
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="048-OX-tES"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="aWB-EY-SDv"/>
-
                     <connections>
                         <outlet property="addressLabel" destination="mIj-G2-iR3" id="4C0-Rp-qJ2"/>
                         <outlet property="emailLabel" destination="vUm-84-Qv1" id="T1y-JO-rvB"/>
                         <outlet property="nameLabel" destination="G8K-j6-oN1" id="vYc-xn-1bE"/>
                         <outlet property="phoneLabel" destination="nQA-eA-11c" id="vuf-cF-kHL"/>
                         <segue destination="Aap-Ca-a5V" kind="presentation" identifier="ProfileToEdit" id="1ZH-Hy-lbi"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slO-GE-L7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2904.8000000000002" y="1593.5532233883059"/>
-
         </scene>
         <!--Edit-->
         <scene sceneID="evd-Aa-GTV">
