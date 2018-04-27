@@ -7,7 +7,7 @@ class ConfirmViewController: UIViewController {
 //        self.dismiss(animated: true, completion: nil)
         //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Menu")
         //        self.present(vc!, animated: true, completion: nil)
-
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
 
     }
 }
