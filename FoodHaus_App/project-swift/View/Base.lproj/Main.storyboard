@@ -238,7 +238,7 @@
         <!--Profile-->
         <scene sceneID="rmI-3X-1H3">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQ0-QE-QPZ" customClass="ProfileViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQ0-QE-QPZ" customClass="ProfileViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="flf-8i-74l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,7 +325,7 @@
                         <outlet property="emailLabel" destination="vUm-84-Qv1" id="T1y-JO-rvB"/>
                         <outlet property="nameLabel" destination="G8K-j6-oN1" id="vYc-xn-1bE"/>
                         <outlet property="phoneLabel" destination="nQA-eA-11c" id="vuf-cF-kHL"/>
-                        <segue destination="Aap-Ca-a5V" kind="presentation" identifier="ProfileToEdit" id="1ZH-Hy-lbi"/>
+                        <segue destination="Aap-Ca-a5V" kind="show" identifier="ProfileToEdit" id="vYU-83-R9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slO-GE-L7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -393,7 +393,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d1-uy-MHf">
-                                <rect key="frame" x="220" y="483" width="98" height="40"/>
+                                <rect key="frame" x="57" y="483" width="261" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -402,18 +402,6 @@
                                 </state>
                                 <connections>
                                     <action selector="saveButton:" destination="Aap-Ca-a5V" eventType="touchUpInside" id="R8m-iz-b85"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqx-cb-jfR">
-                                <rect key="frame" x="55" y="483" width="98" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelButton:" destination="Aap-Ca-a5V" eventType="touchUpInside" id="sWx-9k-Yho"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -442,7 +430,7 @@
                         <viewLayoutGuide key="safeArea" id="pbu-vg-PdZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="FoodHaus" id="vnD-Lt-DfF">
-                        <barButtonItem key="leftBarButtonItem" title="User" id="jTR-lA-Rcp">
+                        <barButtonItem key="leftBarButtonItem" id="jTR-lA-Rcp">
                             <connections>
                                 <action selector="userButton:" destination="irp-gn-gzV" id="Yi8-rB-qCm"/>
                             </connections>

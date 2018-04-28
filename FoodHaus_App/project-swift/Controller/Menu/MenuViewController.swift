@@ -5,9 +5,7 @@ class MenuViewController: UIViewController {
     var productTypeArr:[String] = []
     var productNameArr:[AnyObject] = []
     var productPriceArr:[AnyObject] = []   // Price
-//    var login: Bool = false
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "FoodHaus"
@@ -15,15 +13,15 @@ class MenuViewController: UIViewController {
         self.initData()
         self.automaticallyAdjustsScrollViewInsets = false
         
-//        if (login) {
-//            self.navigationItem.leftBarButtonItem =
-//                UIBarButtonItem(title: "Log out", style: .plain, target: self, action: nil)
-//        } else {
-//            self.navigationItem.leftBarButtonItem =
-//                UIBarButtonItem(
-//                    title: "Log in", style: .plain, target: self, action: nil)
-//        }
-
+        // init the text of left bar button item
+        if (Auth.auth().currentUser != nil) {
+            self.navigationItem.leftBarButtonItem =
+                UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(userButton))
+        } else {
+            self.navigationItem.leftBarButtonItem =
+                UIBarButtonItem(
+                    title: "Log in", style: .plain, target: self, action: #selector(userButton))
+        }
     }
     
     func  initData()
@@ -86,10 +84,11 @@ class MenuViewController: UIViewController {
     @IBAction func userButton(_ sender: UIButton) {
         // check whether user has valid auth session Firebase
 
-        if Auth.auth().currentUser != nil {
+        if (Auth.auth().currentUser != nil &&
+            self.navigationItem.leftBarButtonItem?.title == "Log out") {    // log out when clicked
 
             // user log out
-//            login = false;
+            self.navigationItem.leftBarButtonItem?.title = "Log in"
             
             do {
                 try Auth.auth().signOut()
@@ -98,34 +97,23 @@ class MenuViewController: UIViewController {
             }
             
             let alertController = UIAlertController(title: "Log out", message: "Your account has been logged out", preferredStyle: .alert)
-            
+
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
-            
+
             self.present(alertController, animated: true, completion: nil)
             
+        } else if (Auth.auth().currentUser == nil &&
+            self.navigationItem.leftBarButtonItem?.title == "Log in"){ // log in when clicked
+            
+            // user log out
+            self.navigationItem.leftBarButtonItem?.title = "Log out"
 
-
-        } else { // cur user logged out
-//            login = true
             self.performSegue(withIdentifier: "MenuToLogin", sender: self)
+
 
         }
 
-
-        
-        /* Need help!!! */
-        
-//        if (self.navigationItem.leftBarButtonItem?.title == "Login") {  // cur user logged in
-//
-//
-//            self.navigationItem.leftBarButtonItem?.title = "Log out"
-//        } else if (self.navigationItem.leftBarButtonItem?.title == "Log out") { // cur user logged out
-//
-//            
-//            self.navigationItem.leftBarButtonItem?.title = "Login"
-//
-//        }
     }
     
 }
