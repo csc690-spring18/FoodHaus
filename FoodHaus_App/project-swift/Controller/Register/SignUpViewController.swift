@@ -9,6 +9,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     
+   
+    
     //Sign Up Action for email
     @IBAction func createAccountAction(_ sender: AnyObject) {
         if emailTextField.text == "" {
@@ -46,5 +48,6 @@ class SignUpViewController: UIViewController {
             }
         }
     }
+    
 }
 
