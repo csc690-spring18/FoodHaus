@@ -39,17 +39,16 @@ class EditViewController: UIViewController {
                                                                  "phone": phone,
                                                                  "address": address])
             
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile")
-            self.present(vc!, animated: true, completion:  nil)
             
-//            _ = navigationController?.popViewController(animated: true)
+            _ = navigationController?.popViewController(animated: true)
 
             
             // cant present info immediately !!!!!!
 //            dismiss(animated: true, completion: nil)
              // will present info immediately !!!!!!
-//
-            
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile")
+//            self.present(vc!, animated: true, completion:  nil)
+
         } else {
             //Tells the user that they need to fill in all info
             let alertController = UIAlertController(title: "Oops", message: "Please fill in all information so that we could contact and delivery to you", preferredStyle: .alert)
