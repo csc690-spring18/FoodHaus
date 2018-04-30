@@ -137,7 +137,6 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="HjC-e0-pFM">
                                 <rect key="frame" x="87" y="318" width="200" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="LjL-Sr-alq"/>
                                     <constraint firstAttribute="height" constant="30" id="PTW-vH-gv1"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -157,7 +156,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forget Password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JME-oc-jT3">
                                 <rect key="frame" x="16" y="95" width="343" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="ojV-RO-D1d"/>
                                     <constraint firstAttribute="height" constant="66" id="yW6-nV-abm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -220,7 +218,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1i-Ls-7hM">
                                 <rect key="frame" x="16" y="95" width="343" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="7cy-HT-EcS"/>
                                     <constraint firstAttribute="height" constant="66" id="bZg-Cn-LCQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -230,7 +227,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yae-Y8-ZXQ">
                                 <rect key="frame" x="87" y="347" width="200" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <state key="normal" title="You agree to the Foodhaus User Agreement">
+                                <state key="normal" title="By signing up, you agree to our terms of use.">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
