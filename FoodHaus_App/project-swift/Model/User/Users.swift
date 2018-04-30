@@ -6,6 +6,7 @@ struct Users {
     let uid: String
     let email: String
     
+    
     init(authData: User) {
         uid = authData.uid
         email = authData.email!

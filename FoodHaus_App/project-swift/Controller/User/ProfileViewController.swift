@@ -3,6 +3,8 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+    var user: Users!
+
     // define references to DB
     let ref = Database.database().reference()
     
@@ -13,6 +15,11 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = Users(authData: user)
+        }
         
         // retrieve cur user's info from Database
         let userID = Auth.auth().currentUser?.uid

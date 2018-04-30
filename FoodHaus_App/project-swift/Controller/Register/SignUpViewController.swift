@@ -9,6 +9,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     
+   
+    
     //Sign Up Action for email
     @IBAction func createAccountAction(_ sender: AnyObject) {
         if emailTextField.text == "" {
@@ -24,8 +26,8 @@ class SignUpViewController: UIViewController {
                 Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                     
                     if error == nil {
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-                        self.present(vc!, animated: true, completion: nil)
+
+                        self.dismiss(animated: true, completion: nil)
                         
                     } else {
                         let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -46,5 +48,6 @@ class SignUpViewController: UIViewController {
             }
         }
     }
+    
 }
 

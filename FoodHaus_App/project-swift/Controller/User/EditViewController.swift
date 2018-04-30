@@ -21,7 +21,7 @@ class EditViewController: UIViewController {
         }
     }
     
-    @IBAction func saveButton(_ sender: Any) {
+    @IBAction func saveButton(_ sender: Any) {        
         // save data into Database as json
         let email = self.user.getEmail
         guard
@@ -38,9 +38,18 @@ class EditViewController: UIViewController {
                                                                  "name": name,
                                                                  "phone": phone,
                                                                  "address": address])
-     
-            dismiss(animated: true, completion: nil)
             
+            
+            _ = navigationController?.popViewController(animated: true)
+
+            
+            // cant present info immediately !!!!!!
+//            dismiss(animated: true, completion: nil)
+             // will present info immediately !!!!!!
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile")
+//            self.navigationController!.pushViewController(vc!, animated: true)
+//            self.present(vc!, animated: true, completion: nil)
+
         } else {
             //Tells the user that they need to fill in all info
             let alertController = UIAlertController(title: "Oops", message: "Please fill in all information so that we could contact and delivery to you", preferredStyle: .alert)
@@ -51,8 +60,8 @@ class EditViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    
-    @IBAction func cancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
+//    @IBAction func cancelButton(_ sender: Any) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
 }

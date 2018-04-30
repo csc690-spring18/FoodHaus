@@ -28,6 +28,8 @@
 		E8BE32442088A87900EDBB11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BE32422088A87900EDBB11 /* LaunchScreen.storyboard */; };
 		E8BE324F2088A87900EDBB11 /* project_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE324E2088A87900EDBB11 /* project_swiftTests.swift */; };
 		E8DF8F242089BF9C00B5D6CC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF8F232089BF9C00B5D6CC /* MenuViewController.swift */; };
+		E8FB6979209459D90009F1CC /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FB6978209459D90009F1CC /* TermsViewController.swift */; };
+		E8FB697D209461F30009F1CC /* Terms.txt in Resources */ = {isa = PBXBuildFile; fileRef = E8FB697C209461F30009F1CC /* Terms.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		E8BE324E2088A87900EDBB11 /* project_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = project_swiftTests.swift; sourceTree = "<group>"; };
 		E8BE32502088A87900EDBB11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8DF8F232089BF9C00B5D6CC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E8FB6978209459D90009F1CC /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		E8FB697C209461F30009F1CC /* Terms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Terms.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			children = (
 				65ED1C14208AEC540083450F /* MenuData.json */,
 				65ED1C10208AEA7A0083450F /* MenuPrice.json */,
+				E8FB697C209461F30009F1CC /* Terms.txt */,
 				E8E5A9632089B0F70086F596 /* Model */,
 				E8E5A9642089B10B0086F596 /* View */,
 				E8E5A9652089B1160086F596 /* Controller */,
@@ -205,6 +210,7 @@
 				E845879C2088A9A800BCA13D /* SignUpViewController.swift */,
 				E84587982088A97900BCA13D /* LoginViewController.swift */,
 				E845879A2088A98F00BCA13D /* ResetPasswordViewController.swift */,
+				E8FB6978209459D90009F1CC /* TermsViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				65ED1C15208AEC540083450F /* MenuData.json in Resources */,
 				E8BE32412088A87900EDBB11 /* Assets.xcassets in Resources */,
 				E8BE323F2088A87800EDBB11 /* Main.storyboard in Resources */,
+				E8FB697D209461F30009F1CC /* Terms.txt in Resources */,
 				65ED1C11208AEA7A0083450F /* MenuPrice.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +397,7 @@
 				E845879F2088A9B700BCA13D /* CheckViewController.swift in Sources */,
 				E84587972088A96300BCA13D /* ProfileViewController.swift in Sources */,
 				65ED1C08208AA9000083450F /* GroupTableView.swift in Sources */,
+				E8FB6979209459D90009F1CC /* TermsViewController.swift in Sources */,
 				E845879B2088A98F00BCA13D /* ResetPasswordViewController.swift in Sources */,
 				E8DF8F242089BF9C00B5D6CC /* MenuViewController.swift in Sources */,
 				65ED1C0A208AAD460083450F /* ProductMenuTableViewCell.swift in Sources */,
