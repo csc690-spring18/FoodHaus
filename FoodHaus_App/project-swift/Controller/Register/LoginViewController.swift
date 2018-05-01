@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //Outlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -15,9 +15,25 @@ class LoginViewController: UIViewController {
 //                self.performSegue(withIdentifier: "LoginToMenu", sender: self)
 //            }
 //        }
+
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
     }
     
-   
+    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+
     
     //Login Action
     @IBAction func loginButton(_ sender: Any) {

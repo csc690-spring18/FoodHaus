@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckTableModel
+class CheckViewModel
 {
 //    var list:[String]?
 //    let userDefault = UserDefaults.standard
