@@ -40,14 +40,14 @@ class EditViewController: UIViewController {
                                                                  "address": address])
             
             
-//            _ = navigationController?.popViewController(animated: true)
+            _ = navigationController?.popViewController(animated: true)
 
             
             // cant present info immediately !!!!!!
 //            dismiss(animated: true, completion: nil)
              // will present info immediately !!!!!!
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile")
-            self.navigationController!.pushViewController(vc!, animated: true)
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile")
+//            self.navigationController!.pushViewController(vc!, animated: true)
 //            self.present(vc!, animated: true, completion: nil)
 
         } else {
