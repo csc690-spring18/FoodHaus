@@ -23,7 +23,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-
     
     //Login Action
     @IBAction func loginButton(_ sender: Any) {
@@ -59,6 +58,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-  
- 
 }

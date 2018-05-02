@@ -1,13 +1,16 @@
 import UIKit
+import Alamofire
+import MobileCoreServices
 import FirebaseDatabase
 import FirebaseAuth
+import Firebase
 
 class EditViewController: UIViewController {
     var user: Users!
     
     // define references to DB
     let ref = Database.database().reference()
-    
+
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -21,7 +24,7 @@ class EditViewController: UIViewController {
         }
     }
     
-    @IBAction func saveButton(_ sender: Any) {        
+    @IBAction func saveButton(_ sender: Any) {
         // save data into Database as json
         let email = self.user.getEmail
         guard
@@ -39,16 +42,7 @@ class EditViewController: UIViewController {
                                                                  "phone": phone,
                                                                  "address": address])
             
-            
             _ = navigationController?.popViewController(animated: true)
-
-            
-            // cant present info immediately !!!!!!
-//            dismiss(animated: true, completion: nil)
-             // will present info immediately !!!!!!
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile")
-//            self.navigationController!.pushViewController(vc!, animated: true)
-//            self.present(vc!, animated: true, completion: nil)
 
         } else {
             //Tells the user that they need to fill in all info
@@ -60,8 +54,4 @@ class EditViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-
-//    @IBAction func cancelButton(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
 }
