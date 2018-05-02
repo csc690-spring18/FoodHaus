@@ -10,18 +10,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        Auth.auth().addStateDidChangeListener() { auth, user in
-//            if user != nil {
-//                self.performSegue(withIdentifier: "LoginToMenu", sender: self)
-//            }
-//        }
-
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-
     }
     
     func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

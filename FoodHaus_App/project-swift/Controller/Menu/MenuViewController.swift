@@ -6,12 +6,8 @@ class MenuViewController: UIViewController {
     var productNameArr:[AnyObject] = []
     var productPriceArr:[AnyObject] = []   // Price
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "FoodHaus"
-        self.view.backgroundColor = UIColor.white
-        self.initData()
-        self.automaticallyAdjustsScrollViewInsets = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         // init the text of left bar button item
         if (Auth.auth().currentUser != nil) {
@@ -22,6 +18,14 @@ class MenuViewController: UIViewController {
                 UIBarButtonItem(
                     title: "Log in", style: .plain, target: self, action: #selector(userButton))
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "FoodHaus"
+        self.view.backgroundColor = UIColor.white
+        self.initData()
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     func  initData()
@@ -107,13 +111,7 @@ class MenuViewController: UIViewController {
             self.navigationItem.leftBarButtonItem?.title == "Log in"){ // log in when clicked
             
             // user log out
-            self.navigationItem.leftBarButtonItem?.title = "Log out"
-
             self.performSegue(withIdentifier: "MenuToLogin", sender: self)
-
-
         }
-
     }
-    
 }

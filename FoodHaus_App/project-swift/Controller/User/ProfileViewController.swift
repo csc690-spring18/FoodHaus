@@ -13,8 +13,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
@@ -35,6 +35,11 @@ class ProfileViewController: UIViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
+        
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
   
     @IBAction func editButton(_ sender: Any) {
