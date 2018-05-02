@@ -38,7 +38,6 @@ class CheckViewController: UIViewController {
         }
     }
     
-    
     @IBAction func cancelButton(_ sender: Any) {
         // Remove the list when user click cancel button
         

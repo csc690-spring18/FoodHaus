@@ -46,7 +46,4 @@ class ProfileViewController: UIViewController {
         self.performSegue(withIdentifier: "ProfileToEdit", sender: self)
 
     }
-    
-  
-    
 }
