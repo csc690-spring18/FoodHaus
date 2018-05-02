@@ -25,7 +25,6 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   }
 }
 
-
 let screenHeight = UIScreen.main.bounds.height
 let screenWidth  = UIScreen.main.bounds.width
 

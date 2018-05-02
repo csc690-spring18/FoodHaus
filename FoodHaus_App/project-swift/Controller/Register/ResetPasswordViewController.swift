@@ -5,9 +5,9 @@ class ResetPasswordViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var emailTextField: UITextField!
-    
+
     // Reset Password Action
-    @IBAction func submitAction(_ sender: AnyObject) {
+    @IBAction func submitAction(_ sender: Any) {
         
         if self.emailTextField.text == "" {
             let alertController = UIAlertController(title: "Oops!", message: "Please enter an email.", preferredStyle: .alert)
@@ -40,7 +40,5 @@ class ResetPasswordViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             })
         }
-    }
-    
-    
+    }    
 }
