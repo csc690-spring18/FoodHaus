@@ -3,15 +3,15 @@ import FirebaseAuth
 import Firebase
 
 class SignUpViewController: UIViewController {
-    
+   
     //Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
-    
+
     
     //Sign Up Action for email
-    @IBAction func createAccountAction(_ sender: AnyObject) {
+    @IBAction func createAccountAction(_ sender: Any) {
         if emailTextField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             
@@ -25,7 +25,7 @@ class SignUpViewController: UIViewController {
                 Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                     
                     if error == nil {
-
+                        
                         self.dismiss(animated: true, completion: nil)
                         
                     } else {
@@ -47,6 +47,4 @@ class SignUpViewController: UIViewController {
             }
         }
     }
-    
 }
-

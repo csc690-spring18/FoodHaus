@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 import MobileCoreServices
 import FirebaseDatabase
 import FirebaseAuth
@@ -31,8 +30,8 @@ class EditViewController: UIViewController {
             let name = nameTextField.text,
             let phone = phoneTextField.text,
             let address = addressTextField.text
-        else {
-            return
+            else {
+                return
         }
         
         // user has to fill in all info in their profile
@@ -43,7 +42,7 @@ class EditViewController: UIViewController {
                                                                  "address": address])
             
             _ = navigationController?.popViewController(animated: true)
-
+            
         } else {
             //Tells the user that they need to fill in all info
             let alertController = UIAlertController(title: "Oops", message: "Please fill in all information so that we could contact and delivery to you", preferredStyle: .alert)
