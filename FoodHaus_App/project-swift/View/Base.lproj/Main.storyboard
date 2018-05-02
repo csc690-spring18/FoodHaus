@@ -11,27 +11,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Successfully-->
+        <!--Going Hot!-->
         <scene sceneID="0JG-yL-l9v">
             <objects>
-                <viewController title="Successfully" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Is8-sS-DKr" customClass="ConfirmViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Going Hot!" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Is8-sS-DKr" customClass="ConfirmViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TP1-9s-JNS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Successfully!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWZ-1H-F1G">
-                                <rect key="frame" x="20" y="240" width="336" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="imT-dL-g1Q"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-dp-hgU">
                                 <rect key="frame" x="20" y="564" width="335" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="5ch-OL-Job"/>
+                                    <constraint firstAttribute="height" constant="32" id="8Ea-td-kjG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <state key="normal" title="Back to menu">
@@ -41,22 +32,49 @@
                                     <action selector="BackToMenuButton:" destination="Is8-sS-DKr" eventType="touchUpInside" id="7mI-UM-bgo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Loe-dH-Gju">
+                                <rect key="frame" x="20" y="315" width="335" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="ZzZ-0i-d8g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Successfully!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWZ-1H-F1G">
+                                <rect key="frame" x="20" y="220" width="335" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="s1h-2R-sN8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LBm-dp-hgU" firstAttribute="centerX" secondItem="pWZ-1H-F1G" secondAttribute="centerX" id="5kR-oh-BNa"/>
-                            <constraint firstItem="LBm-dp-hgU" firstAttribute="leading" secondItem="oVR-47-368" secondAttribute="leading" constant="20" id="Nr0-RS-lWC"/>
-                            <constraint firstItem="pWZ-1H-F1G" firstAttribute="top" secondItem="oVR-47-368" secondAttribute="top" constant="176" id="P8C-DI-Q5j"/>
-                            <constraint firstItem="LBm-dp-hgU" firstAttribute="centerX" secondItem="TP1-9s-JNS" secondAttribute="centerX" id="eqX-so-iUI"/>
-                            <constraint firstItem="oVR-47-368" firstAttribute="bottom" secondItem="LBm-dp-hgU" secondAttribute="bottom" constant="71" id="h1X-Yq-ga3"/>
-                            <constraint firstItem="pWZ-1H-F1G" firstAttribute="leading" secondItem="oVR-47-368" secondAttribute="leading" constant="20" id="nGf-j5-oQg"/>
+                            <constraint firstItem="oVR-47-368" firstAttribute="trailing" secondItem="pWZ-1H-F1G" secondAttribute="trailing" constant="20" id="2IG-IT-Fyb"/>
+                            <constraint firstItem="Loe-dH-Gju" firstAttribute="leading" secondItem="oVR-47-368" secondAttribute="leading" constant="20" id="2Mt-OG-2Eh"/>
+                            <constraint firstItem="LBm-dp-hgU" firstAttribute="leading" secondItem="oVR-47-368" secondAttribute="leading" constant="20" id="8rF-J2-2Wv"/>
+                            <constraint firstItem="LBm-dp-hgU" firstAttribute="top" secondItem="Loe-dH-Gju" secondAttribute="bottom" constant="212" id="DdH-GU-dI2"/>
+                            <constraint firstItem="LBm-dp-hgU" firstAttribute="centerX" secondItem="TP1-9s-JNS" secondAttribute="centerX" id="E09-Y3-H15"/>
+                            <constraint firstItem="Loe-dH-Gju" firstAttribute="top" secondItem="pWZ-1H-F1G" secondAttribute="bottom" constant="63" id="Nj4-9t-fTx"/>
+                            <constraint firstItem="pWZ-1H-F1G" firstAttribute="centerX" secondItem="TP1-9s-JNS" secondAttribute="centerX" id="YqG-VJ-WfK"/>
+                            <constraint firstItem="pWZ-1H-F1G" firstAttribute="top" secondItem="oVR-47-368" secondAttribute="top" constant="156" id="ZkJ-8K-RcY"/>
+                            <constraint firstItem="Loe-dH-Gju" firstAttribute="centerX" secondItem="TP1-9s-JNS" secondAttribute="centerX" id="bve-Jt-FPj"/>
+                            <constraint firstItem="oVR-47-368" firstAttribute="trailing" secondItem="Loe-dH-Gju" secondAttribute="trailing" constant="20" id="d8o-wC-wHE"/>
+                            <constraint firstItem="pWZ-1H-F1G" firstAttribute="leading" secondItem="oVR-47-368" secondAttribute="leading" constant="20" id="hbM-dR-VeY"/>
+                            <constraint firstItem="oVR-47-368" firstAttribute="trailing" secondItem="LBm-dp-hgU" secondAttribute="trailing" constant="20" id="mxN-M2-DIY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oVR-47-368"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="Loe-dH-Gju" id="Lzm-YG-LZ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ei-Rr-OU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="2382"/>
+            <point key="canvasLocation" x="2854" y="2463"/>
         </scene>
         <!--Edit-->
         <scene sceneID="TCc-QS-zGJ">
@@ -483,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tC-zz-dhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="3399"/>
+            <point key="canvasLocation" x="1994" y="3491"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uNm-Qr-P1Q">
@@ -589,7 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tS3-Cq-wDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="3400"/>
+            <point key="canvasLocation" x="2855" y="3490"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="dme-uM-sOZ">
@@ -725,7 +743,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycK-iW-bMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="3399"/>
+            <point key="canvasLocation" x="1137" y="3490"/>
         </scene>
         <!--Login-->
         <scene sceneID="4D4-ys-vbY">
