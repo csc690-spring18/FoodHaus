@@ -51,7 +51,12 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         self.contentView.addSubview(self.productName)
         
         // Product Price
-        self.productPrice = UILabel(frame:CGRect(x: 200,y: 15,width: (screenWidth*0.7) - 30,height: 20))    // change the position of price
+        if(screenWidth < 350) { // if it's iPhone 5s or SE, the price needs to be closer to the left
+            self.productPrice = UILabel(frame:CGRect(x: 170,y: 15,width: (screenWidth*0.7) - 30,height: 20))
+        }
+        else {
+            self.productPrice = UILabel(frame:CGRect(x: 200,y: 15,width: (screenWidth*0.7) - 30,height: 20))
+        }
         self.productPrice.font = UIFont.systemFont(ofSize: 15)
         self.productPrice.textColor = UIColor.black
         self.productPrice.textAlignment = NSTextAlignment.left
