@@ -3,11 +3,18 @@ import Firebase
 
 class CheckViewController: UIViewController {
     
-
+    
+    @IBOutlet weak var totalPrice: UILabel!
+    
+    @IBOutlet weak var tax: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let totalPriceText = totalPrice.text,
+            let total:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))  {
+            totalPrice.text = totalPriceText + total
+        }
     }
 
     @IBAction func confirmButon(_ sender: Any) {

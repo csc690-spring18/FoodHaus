@@ -120,15 +120,27 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
                 self.buyCount.frame.origin.x = (screenWidth*0.7) - 108
                 self.minusBtn.alpha = 1.0
                 self.buyCount.text = "1"
-            }) 
+            })
+            if let price:Double = Double(productPrice.text!)
+            {
+                var curTotal = UserDefaults.standard.double(forKey: "total")
+                curTotal = curTotal + price
+                UserDefaults.standard.set(curTotal, forKey: "total")
+            }
         }
         else
         {
-            self.buyCount.text = String(Int(self.buyCount.text!)!+1)
+            self.buyCount.text = String(Int(self.buyCount.text!)! + 1)
+            if let price:Double = Double(productPrice.text!)
+            {
+                var curTotal = UserDefaults.standard.double(forKey: "total")
+                curTotal = curTotal + price
+                UserDefaults.standard.set(curTotal, forKey: "total")
+            }
         }
         if addProClosure != nil
         {
-            addProClosure!(self,true)
+            addProClosure!(self, true)
         }
     }
     
@@ -137,7 +149,15 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
            
         if Int(self.buyCount.text!) > 1
         {
-            self.buyCount.text = String(Int(self.buyCount.text!)!-1)
+            self.buyCount.text = String(Int(self.buyCount.text!)! - 1)
+            
+            // saving data
+            if let price:Double = Double(productPrice.text!)
+            {
+                var curTotal = UserDefaults.standard.double(forKey: "total")
+                curTotal = curTotal - price
+                UserDefaults.standard.set(curTotal, forKey: "total")
+            }
         }
         else
         {
@@ -150,7 +170,7 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         }
         if addProClosure != nil
         {
-            addProClosure!(self,false)
+            addProClosure!(self, false)
         }
     }
 }

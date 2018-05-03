@@ -417,20 +417,44 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-no-RKw">
-                                <rect key="frame" x="66" y="516" width="243" height="21"/>
+                                <rect key="frame" x="66" y="516" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XiP-lP-oA7">
-                                <rect key="frame" x="16" y="80" width="343" height="351"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cio-wP-d2h">
-                                <rect key="frame" x="66" y="447" width="243" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tax:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cio-wP-d2h">
+                                <rect key="frame" x="66" y="452" width="42" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="FfM-OM-Xkl"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="totalLabel" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBN-ae-6AA">
+                                <rect key="frame" x="141" y="511" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfJ-uH-V2o">
+                                <rect key="frame" x="141" y="383" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtotal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13i-5J-cjo">
+                                <rect key="frame" x="39" y="388" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqe-eh-tR2">
+                                <rect key="frame" x="149" y="448" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -439,11 +463,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dh0-no-RKw" firstAttribute="top" secondItem="Cio-wP-d2h" secondAttribute="bottom" constant="43" id="6rg-dN-rDR"/>
-                            <constraint firstItem="Cio-wP-d2h" firstAttribute="top" secondItem="XiP-lP-oA7" secondAttribute="bottom" constant="16" id="8J3-J3-fcq"/>
                             <constraint firstItem="lio-6X-BFo" firstAttribute="trailing" secondItem="DxB-wZ-YzI" secondAttribute="trailing" constant="76" id="N8J-4n-o8u"/>
-                            <constraint firstItem="XiP-lP-oA7" firstAttribute="leading" secondItem="lio-6X-BFo" secondAttribute="leading" constant="16" id="Rth-hc-4vT"/>
-                            <constraint firstItem="lio-6X-BFo" firstAttribute="trailing" secondItem="XiP-lP-oA7" secondAttribute="trailing" constant="16" id="VEN-xi-Wru"/>
-                            <constraint firstItem="XiP-lP-oA7" firstAttribute="top" secondItem="lio-6X-BFo" secondAttribute="top" constant="16" id="X5Z-Bt-Yfc"/>
                             <constraint firstItem="Cio-wP-d2h" firstAttribute="leading" secondItem="dh0-no-RKw" secondAttribute="leading" id="h9m-fH-VFf"/>
                             <constraint firstItem="Pb6-x9-kfQ" firstAttribute="top" secondItem="dh0-no-RKw" secondAttribute="bottom" constant="40" id="hgi-1n-Mo5"/>
                             <constraint firstItem="Cio-wP-d2h" firstAttribute="leading" secondItem="lio-6X-BFo" secondAttribute="leading" constant="66" id="lxx-f2-YBN"/>
@@ -451,7 +471,6 @@
                             <constraint firstAttribute="bottom" secondItem="Cio-wP-d2h" secondAttribute="bottom" constant="194" id="rax-ST-JH1"/>
                             <constraint firstItem="DxB-wZ-YzI" firstAttribute="baseline" secondItem="Pb6-x9-kfQ" secondAttribute="baseline" id="t4p-Cy-RSA"/>
                             <constraint firstItem="Cio-wP-d2h" firstAttribute="leading" secondItem="Pb6-x9-kfQ" secondAttribute="leading" id="u6Z-ZH-APd"/>
-                            <constraint firstItem="Cio-wP-d2h" firstAttribute="centerX" secondItem="XiP-lP-oA7" secondAttribute="centerX" id="vbI-oI-Lvw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lio-6X-BFo"/>
                     </view>
@@ -463,6 +482,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tax" destination="Xqe-eh-tR2" id="Erp-m7-oVA"/>
+                        <outlet property="totalPrice" destination="bfJ-uH-V2o" id="CYc-3K-1Qs"/>
                         <segue destination="Is8-sS-DKr" kind="show" identifier="Successful" id="Ken-Bd-BoI"/>
                     </connections>
                 </viewController>
