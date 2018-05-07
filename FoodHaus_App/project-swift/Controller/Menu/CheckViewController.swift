@@ -5,6 +5,7 @@ class CheckViewController: UIViewController {
     
     @IBOutlet weak var subTotalPrice: UILabel!
     @IBOutlet weak var tax: UILabel!
+    @IBOutlet weak var totalPrice: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,6 +13,20 @@ class CheckViewController: UIViewController {
         let subTotalPriceText = subTotalPrice.text!
         let subTotal:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))
         subTotalPrice.text = subTotalPriceText + subTotal
+        
+        if let taxText = subTotalPrice.text {
+            let numberFormatter = NumberFormatter()
+            let totalPrice = numberFormatter.number(from: taxText)?.doubleValue
+            let taxAmt:Double = totalPrice! * 0.085
+            tax.text = String(format: "%.2f", taxAmt)
+        }
+        
+        if let totalPriceText = subTotalPrice.text {
+            let numberFormatter = NumberFormatter()
+            let total = numberFormatter.number(from: totalPriceText)?.doubleValue
+            let afterTax:Double = total! * 1.085
+            totalPrice.text = String(format: "%.2f", afterTax)
+        }
     }
     
     @IBAction func confirmButon(_ sender: Any) {

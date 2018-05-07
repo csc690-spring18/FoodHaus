@@ -474,6 +474,7 @@
                     <connections>
                         <outlet property="subTotalPrice" destination="bfJ-uH-V2o" id="Iqn-YD-hro"/>
                         <outlet property="tax" destination="Xqe-eh-tR2" id="Erp-m7-oVA"/>
+                        <outlet property="totalPrice" destination="zBN-ae-6AA" id="a5m-vE-4yX"/>
                         <segue destination="Is8-sS-DKr" kind="show" identifier="Successful" id="Ken-Bd-BoI"/>
                     </connections>
                 </viewController>
