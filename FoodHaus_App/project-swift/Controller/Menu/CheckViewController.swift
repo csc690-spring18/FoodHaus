@@ -3,20 +3,17 @@ import Firebase
 
 class CheckViewController: UIViewController {
     
-    
-    @IBOutlet weak var totalPrice: UILabel!
-    
+    @IBOutlet weak var subTotalPrice: UILabel!
     @IBOutlet weak var tax: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let totalPriceText = totalPrice.text,
-            let total:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))  {
-            totalPrice.text = totalPriceText + total
-        }
+        let subTotalPriceText = subTotalPrice.text!
+        let subTotal:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))
+        subTotalPrice.text = subTotalPriceText + subTotal
     }
-
+    
     @IBAction func confirmButon(_ sender: Any) {
         // check whether use fill in their info of profile
         let ref = Database.database().reference()
@@ -30,8 +27,19 @@ class CheckViewController: UIViewController {
                 value?["address"] as? String ?? "" != "" &&
                 value?["phone"] as? String ?? "" != "") {
                 
-                self.performSegue(withIdentifier: "Successful", sender: self)
-                
+                // check whether user selected any items
+                if self.subTotalPrice.text == "0.00" {
+                    let alertController = UIAlertController(title: "Oops!", message: "Please order something!", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                } else {
+                    self.resetDefaults()
+                    self.performSegue(withIdentifier: "Successful", sender: self)
+                }
             } else {
                 let alertController = UIAlertController(title: "Oops!", message: "Please complete Profile, we coule contact to you. Go to Profile -> Edit.", preferredStyle: .alert)
                 
@@ -46,9 +54,17 @@ class CheckViewController: UIViewController {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        // Remove the list when user click cancel button
-        
+        resetDefaults()
         // go back to root view controller
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    // reset data of subtotal
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: "total")
+        }
     }
 }
