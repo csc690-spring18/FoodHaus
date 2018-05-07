@@ -8,12 +8,29 @@ class CheckViewController: UIViewController {
     
     @IBOutlet weak var tax: UILabel!
     
+    @IBOutlet weak var finalTotal: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let totalPriceText = totalPrice.text,
+        if let subTotalPriceText = totalPrice.text,
             let total:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))  {
-            totalPrice.text = totalPriceText + total
+            totalPrice.text = subTotalPriceText + total
+        }
+        
+        if let taxText = totalPrice.text {
+            let numberFormatter = NumberFormatter()
+            let totalPrice = numberFormatter.number(from: taxText)?.doubleValue
+            let taxAmt:Double = totalPrice! * 0.085
+            tax.text = String(format: "%.2f", taxAmt)
+        }
+        
+        if let finalTotalText = totalPrice.text {
+            let numberFormatter = NumberFormatter()
+            let totalPrice = numberFormatter.number(from: finalTotalText)?.doubleValue
+            let finalPrice:Double = totalPrice! * 1.085
+            finalTotal.text = String(format: "%.2f", finalPrice)
         }
     }
 
