@@ -27,7 +27,7 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 let screenHeight = UIScreen.main.bounds.height
 let screenWidth  = UIScreen.main.bounds.width
-// delete and add button use one common closure, and then send to the model object
+
 class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
     var productName:UILabel!
     var productPrice: UILabel!  // Price
@@ -37,7 +37,7 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
     var separateLine:UIView?
     var productNameStr:String?
     var productPriceStr: String?
-    // claim closure
+    
     var addProClosure:((UITableViewCell,Bool)->())?
 
     
@@ -97,7 +97,7 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         self.productName.text = self.productNameStr
         self.productPrice.text = self.productPriceStr
     }
-    // plus button click
+    
     @objc func plusBtnClick(_ btn:UIButton){
         let point:CGPoint = self.convert(btn.frame.origin, to: (UIApplication.shared.delegate?.window)!)
         let circleView:UIView = UIView(frame:CGRect(x: point.x,y: point.y,width: 20,height: 20))
@@ -107,19 +107,17 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         window.addSubview(circleView)
         let keyframeAnimation:CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "position")
         let path:CGMutablePath = CGMutablePath()
-       // animation begin position
+       
         path.move(to: CGPoint(x:circleView.layer.position.x, y:circleView.layer.position.y))
-        // animation to: end position
-        //control1: a position between begin and end
-        //control2: a second position between begin and end
+        
         path.addCurve(to: CGPoint(x:30, y:screenHeight-30), control1: CGPoint(x: circleView.layer.position.x-150, y: circleView.layer.position.y-30), control2: CGPoint(x: circleView.layer.position.x-200, y:  circleView.layer.position.y+40))
         keyframeAnimation.path = path
         keyframeAnimation.delegate = self
         keyframeAnimation.duration = 0.5
         circleView.layer.add(keyframeAnimation, forKey: "position");
-        // once the click is done,remove the view
+        
         circleView.perform(#selector(UIView.removeFromSuperview), with: nil, afterDelay: 0.45)
-        // a comparison to the stock according to the number of clicks
+        
         if self.buyCount.text == nil
         {
             UIView.animate(withDuration: 0.5, animations: { () -> Void in
@@ -150,10 +148,10 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
             addProClosure!(self, true)
         }
     }
-    // minus button click
+    
     @objc func minusBtnClick(_ btn:UIButton)
     {
-        
+           
         if Int(self.buyCount.text!) > 1
         {
             self.buyCount.text = String(Int(self.buyCount.text!)! - 1)
