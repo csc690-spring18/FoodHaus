@@ -171,7 +171,13 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
                 self.buyCount.frame.origin.x = (screenWidth*0.7) - 59
                 self.minusBtn.alpha = 0.0
                 self.buyCount.text = nil
-            }) 
+            })
+            if let price:Double = Double(productPrice.text!)
+            {
+                var curTotal = UserDefaults.standard.double(forKey: "total")
+                curTotal = curTotal - price
+                UserDefaults.standard.set(curTotal, forKey: "total")
+            }
         }
         if addProClosure != nil
         {
