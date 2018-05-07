@@ -22,6 +22,7 @@
 		E845879D2088A9A800BCA13D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E845879C2088A9A800BCA13D /* SignUpViewController.swift */; };
 		E845879F2088A9B700BCA13D /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E845879E2088A9B700BCA13D /* CheckViewController.swift */; };
 		E84587A22088AA6F00BCA13D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E84587A12088AA6F00BCA13D /* GoogleService-Info.plist */; };
+		E8AC8E4C20A016640090BAD9 /* AddUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AC8E4B20A016640090BAD9 /* AddUserInfoViewController.swift */; };
 		E8BE323A2088A87800EDBB11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE32392088A87800EDBB11 /* AppDelegate.swift */; };
 		E8BE323F2088A87800EDBB11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BE323D2088A87800EDBB11 /* Main.storyboard */; };
 		E8BE32412088A87900EDBB11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8BE32402088A87900EDBB11 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		E845879E2088A9B700BCA13D /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		E84587A02088A9EA00BCA13D /* project-swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "project-swift.entitlements"; sourceTree = "<group>"; };
 		E84587A12088AA6F00BCA13D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8AC8E4B20A016640090BAD9 /* AddUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserInfoViewController.swift; sourceTree = "<group>"; };
 		E8BE32362088A87800EDBB11 /* project-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "project-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BE32392088A87800EDBB11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BE323E2088A87800EDBB11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				E84587982088A97900BCA13D /* LoginViewController.swift */,
 				E845879A2088A98F00BCA13D /* ResetPasswordViewController.swift */,
 				E8FB6978209459D90009F1CC /* TermsViewController.swift */,
+				E8AC8E4B20A016640090BAD9 /* AddUserInfoViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				65ED1C0A208AAD460083450F /* ProductMenuTableViewCell.swift in Sources */,
 				65F91016208D410000F58FFD /* CheckViewModel.swift in Sources */,
 				E84587992088A97900BCA13D /* LoginViewController.swift in Sources */,
+				E8AC8E4C20A016640090BAD9 /* AddUserInfoViewController.swift in Sources */,
 				65ED1C17208AF0F20083450F /* ConfirmViewController.swift in Sources */,
 				E84587952088A95200BCA13D /* EditViewController.swift in Sources */,
 			);
@@ -569,7 +573,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2YUDZ743G;
 				INFOPLIST_FILE = "project-swift/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Bo-Li.project-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -586,7 +593,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2YUDZ743G;
 				INFOPLIST_FILE = "project-swift/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Bo-Li.project-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -602,7 +612,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2YUDZ743G;
 				INFOPLIST_FILE = "project-swiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Bo-Li.project-swiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -619,7 +633,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2YUDZ743G;
 				INFOPLIST_FILE = "project-swiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Bo-Li.project-swiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
