@@ -51,7 +51,12 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         self.contentView.addSubview(self.productName)
         
         // Product Price
-        self.productPrice = UILabel(frame:CGRect(x: 200,y: 15,width: (screenWidth*0.7) - 30,height: 20))    // change the position of price
+        if(screenWidth < 350) { // if it's iPhone 5s or SE, the price needs to be closer to the left
+            self.productPrice = UILabel(frame:CGRect(x: 170,y: 15,width: (screenWidth*0.7) - 30,height: 20))
+        }
+        else {
+            self.productPrice = UILabel(frame:CGRect(x: 200,y: 15,width: (screenWidth*0.7) - 30,height: 20))
+        }
         self.productPrice.font = UIFont.systemFont(ofSize: 15)
         self.productPrice.textColor = UIColor.black
         self.productPrice.textAlignment = NSTextAlignment.left
@@ -120,15 +125,27 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
                 self.buyCount.frame.origin.x = (screenWidth*0.7) - 108
                 self.minusBtn.alpha = 1.0
                 self.buyCount.text = "1"
-            }) 
+            })
+            if let price:Double = Double(productPrice.text!)
+            {
+                var curTotal = UserDefaults.standard.double(forKey: "total")
+                curTotal = curTotal + price
+                UserDefaults.standard.set(curTotal, forKey: "total")
+            }
         }
         else
         {
-            self.buyCount.text = String(Int(self.buyCount.text!)!+1)
+            self.buyCount.text = String(Int(self.buyCount.text!)! + 1)
+            if let price:Double = Double(productPrice.text!)
+            {
+                var curTotal = UserDefaults.standard.double(forKey: "total")
+                curTotal = curTotal + price
+                UserDefaults.standard.set(curTotal, forKey: "total")
+            }
         }
         if addProClosure != nil
         {
-            addProClosure!(self,true)
+            addProClosure!(self, true)
         }
     }
     
@@ -137,7 +154,15 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
            
         if Int(self.buyCount.text!) > 1
         {
-            self.buyCount.text = String(Int(self.buyCount.text!)!-1)
+            self.buyCount.text = String(Int(self.buyCount.text!)! - 1)
+            
+            // saving data
+            if let price:Double = Double(productPrice.text!)
+            {
+                var curTotal = UserDefaults.standard.double(forKey: "total")
+                curTotal = curTotal - price
+                UserDefaults.standard.set(curTotal, forKey: "total")
+            }
         }
         else
         {
@@ -150,7 +175,7 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         }
         if addProClosure != nil
         {
-            addProClosure!(self,false)
+            addProClosure!(self, false)
         }
     }
 }
