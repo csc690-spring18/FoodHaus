@@ -1,4 +1,4 @@
-# FoodHaus
+## FoodHaus ##
 FoodHaus application is an iOS application designed for FoodHaus restaurant to create a more convinient way of ordering food for the customers. 
 This application has features like user login, checkout, when you're selecting the food you want, the application will save all the food you ordered and get ready for checkout. It also has a feature for you to create an account with FoodHaus, you email, address and phone number will be stored in our database.
 
