@@ -26,8 +26,10 @@ class SignUpViewController: UIViewController {
                     
                     if error == nil {
                         
-                        self.dismiss(animated: true, completion: nil)
+//                        self.dismiss(animated: true, completion: nil)
                         
+                        self.performSegue(withIdentifier: "RegToInfo", sender: self)
+
                     } else {
                         let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                         
