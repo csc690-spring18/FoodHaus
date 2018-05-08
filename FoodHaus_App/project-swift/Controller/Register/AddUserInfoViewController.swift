@@ -50,4 +50,9 @@ class AddUserInfoViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func saveForLaterButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
