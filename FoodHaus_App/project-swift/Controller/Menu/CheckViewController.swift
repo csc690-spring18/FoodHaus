@@ -1,18 +1,34 @@
 import UIKit
 import Firebase
 
+class CustomCell: UITableViewCell {
+    
+}
+
 class CheckViewController: UIViewController {
     
     @IBOutlet weak var subTotalPrice: UILabel!
     @IBOutlet weak var tax: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
+    let items = UserDefaults.standard.stringArray(forKey: "Name") ?? [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(CustomCell.self, forCellReuseIdentifier: "OurCustomCell")
+        tableView.delegate = self
+        tableView.dataSource = self
 
         let subTotalPriceText = subTotalPrice.text!
         let subTotal:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))
         subTotalPrice.text = subTotalPriceText + subTotal
+        
+        
+        for item in items {
+            print(item)
+        }
         
         if let taxText = subTotalPrice.text {
             let numberFormatter = NumberFormatter()
@@ -84,5 +100,17 @@ class CheckViewController: UIViewController {
         dictionary.keys.forEach { key in
             defaults.removeObject(forKey: "total")
         }
+    }
+}
+
+extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OurCustomCell") ?? UITableViewCell()
+            cell.textLabel?.text = items[indexPath.row]
+            return cell
     }
 }

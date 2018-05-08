@@ -12,7 +12,6 @@
 		65ED1C11208AEA7A0083450F /* MenuPrice.json in Resources */ = {isa = PBXBuildFile; fileRef = 65ED1C10208AEA7A0083450F /* MenuPrice.json */; };
 		65ED1C15208AEC540083450F /* MenuData.json in Resources */ = {isa = PBXBuildFile; fileRef = 65ED1C14208AEC540083450F /* MenuData.json */; };
 		65ED1C17208AF0F20083450F /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED1C16208AF0F20083450F /* ConfirmViewController.swift */; };
-		65F91016208D410000F58FFD /* CheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F91015208D410000F58FFD /* CheckViewModel.swift */; };
 		C940B2988EE978BD95864E40 /* Pods_project_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01216B026E6D41E99F3F2891 /* Pods_project_swift.framework */; };
 		E84587932088A93600BCA13D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84587922088A93600BCA13D /* Users.swift */; };
 		E84587952088A95200BCA13D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84587942088A95200BCA13D /* EditViewController.swift */; };
@@ -51,7 +50,6 @@
 		65ED1C10208AEA7A0083450F /* MenuPrice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MenuPrice.json; sourceTree = "<group>"; };
 		65ED1C14208AEC540083450F /* MenuData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MenuData.json; sourceTree = "<group>"; };
 		65ED1C16208AF0F20083450F /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
-		65F91015208D410000F58FFD /* CheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewModel.swift; sourceTree = "<group>"; };
 		E1D12ED2EBBF178130884C84 /* Pods-project-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-project-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-project-swift/Pods-project-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		E84587922088A93600BCA13D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		E84587942088A95200BCA13D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			children = (
 				65ED1C07208AA9000083450F /* GroupTableView.swift */,
 				65ED1C09208AAD460083450F /* ProductMenuTableViewCell.swift */,
-				65F91015208D410000F58FFD /* CheckViewModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -404,7 +401,6 @@
 				E845879B2088A98F00BCA13D /* ResetPasswordViewController.swift in Sources */,
 				E8DF8F242089BF9C00B5D6CC /* MenuViewController.swift in Sources */,
 				65ED1C0A208AAD460083450F /* ProductMenuTableViewCell.swift in Sources */,
-				65F91016208D410000F58FFD /* CheckViewModel.swift in Sources */,
 				E84587992088A97900BCA13D /* LoginViewController.swift in Sources */,
 				E8AC8E4C20A016640090BAD9 /* AddUserInfoViewController.swift in Sources */,
 				65ED1C17208AF0F20083450F /* ConfirmViewController.swift in Sources */,

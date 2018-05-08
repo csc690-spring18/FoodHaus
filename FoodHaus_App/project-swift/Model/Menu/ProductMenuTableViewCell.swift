@@ -1,6 +1,6 @@
-
-
 import UIKit
+
+
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
@@ -37,6 +37,8 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
     var separateLine:UIView?
     var productNameStr:String?
     var productPriceStr: String?
+    
+    var items:[String] = []
     
     var addProClosure:((UITableViewCell,Bool)->())?
 
@@ -126,23 +128,36 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
                 self.minusBtn.alpha = 1.0
                 self.buyCount.text = "1"
             })
+            
             if let price:Double = Double(productPrice.text!)
             {
                 var curTotal = UserDefaults.standard.double(forKey: "total")
                 curTotal = curTotal + price
                 UserDefaults.standard.set(curTotal, forKey: "total")
             }
+            
+            let name: String = String(productName.text!)
+            items.append(name)
+            UserDefaults.standard.set(items, forKey: "Name")
         }
         else
         {
             self.buyCount.text = String(Int(self.buyCount.text!)! + 1)
+            
             if let price:Double = Double(productPrice.text!)
             {
                 var curTotal = UserDefaults.standard.double(forKey: "total")
                 curTotal = curTotal + price
                 UserDefaults.standard.set(curTotal, forKey: "total")
             }
+            
+            let name: String = String(productName.text!)
+//            var curItem = UserDefaults.standard.array(forKey: "Name")
+            
+            items.append(name)
+            UserDefaults.standard.set(items, forKey: "Name")
         }
+        
         if addProClosure != nil
         {
             addProClosure!(self, true)
