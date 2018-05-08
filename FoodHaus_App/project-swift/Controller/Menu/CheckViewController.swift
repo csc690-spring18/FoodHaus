@@ -53,6 +53,8 @@ class CheckViewController: UIViewController {
                     
                 } else {
                     self.resetDefaults()
+                    UserDefaults.standard.set(true, forKey: "init")
+
                     self.performSegue(withIdentifier: "Successful", sender: self)
                 }
             } else {
