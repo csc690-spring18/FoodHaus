@@ -18,6 +18,11 @@ class MenuViewController: UIViewController {
                 UIBarButtonItem(
                     title: "Log in", style: .plain, target: self, action: #selector(userButton))
         }
+        
+        let reInit = UserDefaults.standard.bool(forKey: "init")
+        if reInit {
+            self.initData()
+        }
     }
     
     override func viewDidLoad() {
@@ -27,6 +32,13 @@ class MenuViewController: UIViewController {
         self.initData()
         self.automaticallyAdjustsScrollViewInsets = false
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        let reInit = UserDefaults.standard.bool(forKey: "init")
+//        if reInit {
+//            self.initData()
+//        }
+//    }
     
     func  initData()
     {
@@ -57,6 +69,7 @@ class MenuViewController: UIViewController {
         
         self.addSubView()
         self.addSubViewPrice()
+        UserDefaults.standard.set(false, forKey: "init")
     }
     
     func addSubView(){
