@@ -70,6 +70,7 @@ class CheckViewController: UIViewController {
     
     @IBAction func cancelButton(_ sender: Any) {
         resetDefaults()
+        UserDefaults.standard.set(true, forKey: "init")
         // go back to root view controller
         self.navigationController?.popToRootViewController(animated: true)
     }
