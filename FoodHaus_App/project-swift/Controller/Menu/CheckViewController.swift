@@ -1,14 +1,25 @@
 import UIKit
 import Firebase
 
+class CustomCell: UITableViewCell {
+    
+}
+
 class CheckViewController: UIViewController {
     
     @IBOutlet weak var subTotalPrice: UILabel!
     @IBOutlet weak var tax: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
+    let items = UserDefaults.standard.stringArray(forKey: "Name") ?? [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(CustomCell.self, forCellReuseIdentifier: "OurCustomCell")
+        tableView.delegate = self
+        tableView.dataSource = self
 
         let subTotalPriceText = subTotalPrice.text!
         let subTotal:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))
@@ -52,7 +63,8 @@ class CheckViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                     
                 } else {
-                    self.resetDefaults()
+                    self.resetPrice()
+                    self.resetItem()
                     UserDefaults.standard.set(true, forKey: "init")
 
                     self.performSegue(withIdentifier: "Successful", sender: self)
@@ -71,18 +83,40 @@ class CheckViewController: UIViewController {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        resetDefaults()
+        self.resetPrice()
+        self.resetItem()
         UserDefaults.standard.set(true, forKey: "init")
         // go back to root view controller
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     // reset data of subtotal
-    func resetDefaults() {
+    func resetPrice() {
         let defaults = UserDefaults.standard
         let dictionary = defaults.dictionaryRepresentation()
         dictionary.keys.forEach { key in
             defaults.removeObject(forKey: "total")
         }
+    }
+    
+    // reset data of item
+    func resetItem() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: "Name")
+        }
+    }
+}
+
+extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OurCustomCell") ?? UITableViewCell()
+            cell.textLabel?.text = items[indexPath.row]
+            return cell
     }
 }
