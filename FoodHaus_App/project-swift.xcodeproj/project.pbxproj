@@ -143,9 +143,7 @@
 		E8BE32382088A87800EDBB11 /* project-swift */ = {
 			isa = PBXGroup;
 			children = (
-				65ED1C14208AEC540083450F /* MenuData.json */,
-				65ED1C10208AEA7A0083450F /* MenuPrice.json */,
-				E8FB697C209461F30009F1CC /* Terms.txt */,
+				E8C5421C20A2EFEB00B1A243 /* Support_Files */,
 				E8E5A9632089B0F70086F596 /* Model */,
 				E8E5A9642089B10B0086F596 /* View */,
 				E8E5A9652089B1160086F596 /* Controller */,
@@ -165,6 +163,16 @@
 				E8BE32502088A87900EDBB11 /* Info.plist */,
 			);
 			path = "project-swiftTests";
+			sourceTree = "<group>";
+		};
+		E8C5421C20A2EFEB00B1A243 /* Support_Files */ = {
+			isa = PBXGroup;
+			children = (
+				65ED1C14208AEC540083450F /* MenuData.json */,
+				65ED1C10208AEA7A0083450F /* MenuPrice.json */,
+				E8FB697C209461F30009F1CC /* Terms.txt */,
+			);
+			path = Support_Files;
 			sourceTree = "<group>";
 		};
 		E8E5A9632089B0F70086F596 /* Model */ = {
