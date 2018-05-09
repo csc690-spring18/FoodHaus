@@ -120,6 +120,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E880266320A3B8F20063A9A7 /* Support_Files */ = {
+			isa = PBXGroup;
+			children = (
+				65ED1C14208AEC540083450F /* MenuData.json */,
+				65ED1C10208AEA7A0083450F /* MenuPrice.json */,
+				E8FB697C209461F30009F1CC /* Terms.txt */,
+			);
+			path = Support_Files;
+			sourceTree = "<group>";
+		};
 		E8BE322D2088A87800EDBB11 = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +153,7 @@
 		E8BE32382088A87800EDBB11 /* project-swift */ = {
 			isa = PBXGroup;
 			children = (
-				65ED1C14208AEC540083450F /* MenuData.json */,
-				65ED1C10208AEA7A0083450F /* MenuPrice.json */,
-				E8FB697C209461F30009F1CC /* Terms.txt */,
+				E880266320A3B8F20063A9A7 /* Support_Files */,
 				E8E5A9632089B0F70086F596 /* Model */,
 				E8E5A9642089B10B0086F596 /* View */,
 				E8E5A9652089B1160086F596 /* Controller */,
