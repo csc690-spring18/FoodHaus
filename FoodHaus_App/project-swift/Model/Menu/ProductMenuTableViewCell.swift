@@ -37,7 +37,6 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
     var separateLine:UIView?
     var productNameStr:String?
     var productPriceStr: String?
-    
     var items:[String] = []
     
     var addProClosure:((UITableViewCell,Bool)->())?
@@ -120,6 +119,7 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         
         circleView.perform(#selector(UIView.removeFromSuperview), with: nil, afterDelay: 0.45)
         
+        
         if self.buyCount.text == nil
         {
             UIView.animate(withDuration: 0.5, animations: { () -> Void in
@@ -129,21 +129,28 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
                 self.buyCount.text = "1"
             })
             
+            // add first price
             if let price:Double = Double(productPrice.text!)
             {
                 var curTotal = UserDefaults.standard.double(forKey: "total")
                 curTotal = curTotal + price
                 UserDefaults.standard.set(curTotal, forKey: "total")
             }
-            
+
+            // add first item
             let name: String = String(productName.text!)
+            if let items = UserDefaults.standard.array(forKey: "Name") as? [String] {
+                self.items = items
+            }
             items.append(name)
+            items.sort()
             UserDefaults.standard.set(items, forKey: "Name")
         }
         else
         {
             self.buyCount.text = String(Int(self.buyCount.text!)! + 1)
             
+            // add price
             if let price:Double = Double(productPrice.text!)
             {
                 var curTotal = UserDefaults.standard.double(forKey: "total")
@@ -151,10 +158,11 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
                 UserDefaults.standard.set(curTotal, forKey: "total")
             }
             
+            // add item
             let name: String = String(productName.text!)
-//            var curItem = UserDefaults.standard.array(forKey: "Name")
-            
+            items = UserDefaults.standard.array(forKey: "Name") as! [String]
             items.append(name)
+            items.sort()
             UserDefaults.standard.set(items, forKey: "Name")
         }
         
@@ -171,13 +179,22 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         {
             self.buyCount.text = String(Int(self.buyCount.text!)! - 1)
             
-            // saving data
+            // remove price
             if let price:Double = Double(productPrice.text!)
             {
                 var curTotal = UserDefaults.standard.double(forKey: "total")
                 curTotal = curTotal - price
                 UserDefaults.standard.set(curTotal, forKey: "total")
             }
+            
+            // remove item
+            let name: String = String(productName.text!)
+            items = UserDefaults.standard.array(forKey: "Name") as! [String]
+            let index = items.index { (elementName) -> Bool in
+                elementName == name
+            }
+            items.remove(at: index!)
+            UserDefaults.standard.set(items, forKey: "Name")            
         }
         else
         {
@@ -187,12 +204,24 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
                 self.minusBtn.alpha = 0.0
                 self.buyCount.text = nil
             })
+            
+            // remove last price
             if let price:Double = Double(productPrice.text!)
             {
                 var curTotal = UserDefaults.standard.double(forKey: "total")
                 curTotal = curTotal - price
                 UserDefaults.standard.set(curTotal, forKey: "total")
             }
+            
+            // remove last item
+            let name: String = String(productName.text!)
+            items = UserDefaults.standard.array(forKey: "Name") as! [String]
+            
+            let index = items.index { (elementName) -> Bool in
+                elementName == name
+            }
+            items.remove(at: index!)
+            UserDefaults.standard.set(items, forKey: "Name")
         }
         if addProClosure != nil
         {

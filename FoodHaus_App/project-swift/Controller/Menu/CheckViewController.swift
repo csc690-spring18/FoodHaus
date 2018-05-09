@@ -25,11 +25,6 @@ class CheckViewController: UIViewController {
         let subTotal:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))
         subTotalPrice.text = subTotalPriceText + subTotal
         
-        
-        for item in items {
-            print(item)
-        }
-        
         if let taxText = subTotalPrice.text {
             let numberFormatter = NumberFormatter()
             let totalPrice = numberFormatter.number(from: taxText)?.doubleValue
@@ -68,7 +63,8 @@ class CheckViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                     
                 } else {
-                    self.resetDefaults()
+                    self.resetPrice()
+                    self.resetItem()
                     UserDefaults.standard.set(true, forKey: "init")
 
                     self.performSegue(withIdentifier: "Successful", sender: self)
@@ -87,18 +83,28 @@ class CheckViewController: UIViewController {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        resetDefaults()
+        self.resetPrice()
+        self.resetItem()
         UserDefaults.standard.set(true, forKey: "init")
         // go back to root view controller
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     // reset data of subtotal
-    func resetDefaults() {
+    func resetPrice() {
         let defaults = UserDefaults.standard
         let dictionary = defaults.dictionaryRepresentation()
         dictionary.keys.forEach { key in
             defaults.removeObject(forKey: "total")
+        }
+    }
+    
+    // reset data of item
+    func resetItem() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: "Name")
         }
     }
 }
