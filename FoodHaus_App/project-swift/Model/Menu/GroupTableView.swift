@@ -1,30 +1,24 @@
-
-
 import UIKit
 
-// Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
 }
 
-
-// Consider refactoring the code to use the non-optional operators.
 fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l > r
+    default:
+        return rhs < lhs
+    }
 }
-
 
 class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
     var groupTableView:UITableView!
@@ -54,13 +48,9 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
         self.addSubview(self.classifyTableView)
     }
     
-    
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     
     func  initData()
     {
@@ -86,10 +76,9 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
         {
             productPriceArr.append(priceProductMenuArr[i]["productPrice"] as! [String] as AnyObject)
         }
-
     }
     
-        //MARK:UITableViewDataSource
+    //MARK:UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if tableView == self.classifyTableView
@@ -113,7 +102,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
             classifyCell.textLabel?.numberOfLines = 0
             classifyCell.backgroundColor = UIColor(red: 238, green: 238, blue: 238, alpha: 1)
             classifyCell.selectionStyle = UITableViewCellSelectionStyle.none
-           // the first option by default
+            // the first option by default
             if indexPath.row == currentExtendSection
             {
                 let tempView:UIView = UIView(frame:CGRect(x: 0,y: 0,width: 5,height: 55))
@@ -129,7 +118,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
             {
                 extendCell.productNameStr = (productNameArr[indexPath.section] as! Array)[indexPath.row]
                 extendCell.productPriceStr = (productPriceArr[indexPath.section] as! Array)[indexPath.row]
-
+                
             }
             extendCell.addProClosure = {(cell:UITableViewCell,isAddProduct:Bool) in
                 let indexPath:IndexPath = (self.groupTableView.indexPath(for: cell))!
@@ -189,7 +178,8 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
         }
         return ""
     }
-        //MARK:UITableViewDelegate
+    
+    //MARK:UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if tableView == self.classifyTableView
@@ -230,7 +220,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
                 //if the current option is the same as last one, just return.
                 return ;
             }
-
+            
             // select a new choice
             let newCell:UITableViewCell? = tableView.cellForRow(at: indexPath)
             let tempView:UIView = UIView(frame:CGRect(x: 0,y: 0,width: 5,height: 55))
@@ -244,27 +234,27 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
             let view:UIView? = oldCell?.viewWithTag(101)
             view? .removeFromSuperview()
             
-             self.currentExtendSection = indexPath.row
+            self.currentExtendSection = indexPath.row
             
-         // freeze the selected category on the top
+            // freeze the selected category on the top
             self.groupTableView.scrollToRow(at: IndexPath(row: 0, section:self.currentExtendSection), at: UITableViewScrollPosition.top, animated: true)
             isScrollClassiftyTable = didSelectClassifyTable
             
             let cellR:CGRect = self.classifyTableView.rectForRow(at: indexPath)
             if self.classifyTableView.contentOffset.y - cellR.origin.y > 54
             {
-        // move up the tableview (the tableview is on the left ) to make the selected cell visible
+                // move up the tableview (the tableview is on the left) to make the selected cell visible
                 self.classifyTableView.contentOffset.y = CGFloat(55 * indexPath.row)
             }
             
-        //move down the tableview (the tableview is on the left ) to make the selected cell visible
+            // move down the tableview (the tableview is on the left) to make the selected cell visible
             if cellR.origin.y - self.classifyTableView.frame.size.height > 0 {
                 
                 self.classifyTableView.contentOffset.y = cellR.origin.y - self.classifyTableView.frame.size.height+55
             }
             
         }
-
+        
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
     {

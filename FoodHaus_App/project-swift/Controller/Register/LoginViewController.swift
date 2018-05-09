@@ -38,11 +38,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         UIView.commitAnimations()
     }
     
-    //Login Action
+    // Login Action
     @IBAction func loginButton(_ sender: Any) {
         if self.emailTextField.text == "" || self.passwordTextField.text == "" {
             
-            //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
+            // Alert to tell the user that there was an error because they didn't fill anything in the textfields
+            // because they didn't fill anything in.
             
             let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
             
@@ -84,6 +85,4 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-    
 }

@@ -4,8 +4,8 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     var user: Users!
-
-    // define references to DB
+    
+    // define references to database
     let ref = Database.database().reference()
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
             self.user = Users(authData: user)
         }
         
-        // retrieve cur user's info from Database
+        // retrieve current user's info from database
         let userID = Auth.auth().currentUser?.uid
         
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -35,15 +35,13 @@ class ProfileViewController: UIViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-  
+    
     @IBAction func editButton(_ sender: Any) {
         self.performSegue(withIdentifier: "ProfileToEdit", sender: self)
-
     }
 }

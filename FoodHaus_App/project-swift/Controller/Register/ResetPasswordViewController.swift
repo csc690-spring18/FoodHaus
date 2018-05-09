@@ -5,7 +5,7 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     // Outlets
     @IBOutlet weak var emailTextField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()

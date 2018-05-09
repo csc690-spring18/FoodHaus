@@ -1,28 +1,23 @@
 import UIKit
 
-
-
-// Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
 }
 
-
-// Consider refactoring the code to use the non-optional operators.
 fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l > r
+    default:
+        return rhs < lhs
+    }
 }
 
 let screenHeight = UIScreen.main.bounds.height
@@ -42,7 +37,6 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
     
     // claim closure
     var addProClosure:((UITableViewCell,Bool)->())?
-
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -89,9 +83,9 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         self.contentView.addSubview(self.buyCount)
         
         self.contentView.bringSubview(toFront: self.plusBtn)
-
+        
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -112,11 +106,11 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
         let keyframeAnimation:CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "position")
         let path:CGMutablePath = CGMutablePath()
         
-       // animation begin position
+        // animation begin position
         path.move(to: CGPoint(x:circleView.layer.position.x, y:circleView.layer.position.y))
-            // animation to: end position
-            //control1: a position between begin and end
-            //control2: a second position between begin and end
+        // animation to: end position
+        // control1: a position between begin and end
+        // control2: a second position between begin and end
         path.addCurve(to: CGPoint(x:30, y:screenHeight-30), control1: CGPoint(x: circleView.layer.position.x-150, y: circleView.layer.position.y-30), control2: CGPoint(x: circleView.layer.position.x-200, y:  circleView.layer.position.y+40))
         keyframeAnimation.path = path
         keyframeAnimation.delegate = self
@@ -143,7 +137,7 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
                 curTotal = curTotal + price
                 UserDefaults.standard.set(curTotal, forKey: "total")
             }
-
+            
             // add first item
             let name: String = String(productName.text!)
             if let items = UserDefaults.standard.array(forKey: "Name") as? [String] {
@@ -178,10 +172,11 @@ class PrdouctMenuTableViewCell: UITableViewCell,CAAnimationDelegate {
             addProClosure!(self, true)
         }
     }
+    
     // minus button click
     @objc func minusBtnClick(_ btn:UIButton)
     {
-           
+        
         if Int(self.buyCount.text!) > 1
         {
             self.buyCount.text = String(Int(self.buyCount.text!)! - 1)

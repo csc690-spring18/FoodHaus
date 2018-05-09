@@ -14,7 +14,7 @@ class TermsViewController: UIViewController {
             print("Failed to read from terms.txt")
             print(error)
         }
-    
+        
         termsText.text = readFile
     }
 }

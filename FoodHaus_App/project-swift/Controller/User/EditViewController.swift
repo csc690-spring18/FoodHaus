@@ -7,9 +7,9 @@ import Firebase
 class EditViewController: UIViewController, UITextFieldDelegate {
     var user: Users!
     
-    // define references to DB
+    // define references to database
     let ref = Database.database().reference()
-
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -17,7 +17,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-
+        
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = Users(authData: user)
@@ -71,7 +71,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             _ = navigationController?.popViewController(animated: true)
             
         } else {
-            //Tells the user that they need to fill in all info
+            // tells the user that they need to fill in all info
             let alertController = UIAlertController(title: "Oops", message: "Please fill in all information so that we could contact and delivery to you", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
