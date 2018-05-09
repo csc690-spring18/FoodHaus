@@ -13,14 +13,14 @@ class CheckViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let items = UserDefaults.standard.stringArray(forKey: "Name") ?? [String]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(CustomCell.self, forCellReuseIdentifier: "OurCustomCell")
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         let subTotalPriceText = subTotalPrice.text!
         let subTotal:String = String(format: "%.2f", UserDefaults.standard.double(forKey: "total"))
         subTotalPrice.text = subTotalPriceText + subTotal
@@ -66,7 +66,7 @@ class CheckViewController: UIViewController {
                     self.resetPrice()
                     self.resetItem()
                     UserDefaults.standard.set(true, forKey: "init")
-
+                    
                     self.performSegue(withIdentifier: "Successful", sender: self)
                 }
             } else {
@@ -115,8 +115,8 @@ extension CheckViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OurCustomCell") ?? UITableViewCell()
-            cell.textLabel?.text = items[indexPath.row]
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OurCustomCell") ?? UITableViewCell()
+        cell.textLabel?.text = items[indexPath.row]
+        return cell
     }
 }
