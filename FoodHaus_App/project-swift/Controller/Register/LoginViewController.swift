@@ -12,6 +12,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.hideKeyboardWhenTappedAround()
     }
     
+    // Keyboard shows
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextFIeld(textField: textField, moveDistance: -50, up: true)
+    }
+    
+    // Keyboard hidden
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextFIeld(textField: textField, moveDistance: -50, up: false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func moveTextFIeld(textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
     //Login Action
     @IBAction func loginButton(_ sender: Any) {
         if self.emailTextField.text == "" || self.passwordTextField.text == "" {

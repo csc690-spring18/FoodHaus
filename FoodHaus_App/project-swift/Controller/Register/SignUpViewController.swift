@@ -2,7 +2,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
    
     //Outlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -12,6 +12,32 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+    }
+    
+    // Keyboard shows
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextFIeld(textField: textField, moveDistance: -50, up: true)
+    }
+    
+    // Keyboard hidden
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextFIeld(textField: textField, moveDistance: -50, up: false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func moveTextFIeld(textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
     }
     
     //Sign Up Action for email

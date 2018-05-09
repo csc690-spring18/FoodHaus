@@ -4,7 +4,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 
-class AddUserInfoViewController: UIViewController {
+class AddUserInfoViewController: UIViewController, UITextFieldDelegate {
     var user: Users!
     // define references to DB
     let ref = Database.database().reference()
@@ -21,6 +21,32 @@ class AddUserInfoViewController: UIViewController {
             guard let user = user else { return }
             self.user = Users(authData: user)
         }
+    }
+    
+    // Keyboard shows
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        moveTextFIeld(textField: textField, moveDistance: -100, up: true)
+    }
+    
+    // Keyboard hidden
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        moveTextFIeld(textField: textField, moveDistance: -100, up: false)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func moveTextFIeld(textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
     }
     
     @IBAction func saveButton(_ sender: Any) {
