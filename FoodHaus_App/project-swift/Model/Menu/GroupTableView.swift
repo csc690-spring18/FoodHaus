@@ -1,7 +1,7 @@
 
 
 import UIKit
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -14,7 +14,7 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   }
 }
 
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
   switch (lhs, rhs) {
@@ -113,7 +113,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
             classifyCell.textLabel?.numberOfLines = 0
             classifyCell.backgroundColor = UIColor(red: 238, green: 238, blue: 238, alpha: 1)
             classifyCell.selectionStyle = UITableViewCellSelectionStyle.none
-            
+           // the first option by default
             if indexPath.row == currentExtendSection
             {
                 let tempView:UIView = UIView(frame:CGRect(x: 0,y: 0,width: 5,height: 55))
@@ -227,15 +227,18 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
         {
             if indexPath.row == currentExtendSection
             {
+                //if the current option is the same as last one, just return.
                 return ;
             }
 
+            // select a new choice
             let newCell:UITableViewCell? = tableView.cellForRow(at: indexPath)
             let tempView:UIView = UIView(frame:CGRect(x: 0,y: 0,width: 5,height: 55))
             tempView.tag = 101
             tempView.backgroundColor = UIColor.red
             newCell?.addSubview(tempView)
-
+            
+            //cancel the last choice
             let oldIndexPath:IndexPath = IndexPath(row: currentExtendSection, section: 0)
             let oldCell:UITableViewCell? = tableView.cellForRow(at: oldIndexPath)
             let view:UIView? = oldCell?.viewWithTag(101)
@@ -243,17 +246,18 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
             
              self.currentExtendSection = indexPath.row
             
-         
+         // freeze the selected category on the top
             self.groupTableView.scrollToRow(at: IndexPath(row: 0, section:self.currentExtendSection), at: UITableViewScrollPosition.top, animated: true)
             isScrollClassiftyTable = didSelectClassifyTable
             
             let cellR:CGRect = self.classifyTableView.rectForRow(at: indexPath)
             if self.classifyTableView.contentOffset.y - cellR.origin.y > 54
             {
-                
+        // move up the tableview (the tableview is on the left ) to make the selected cell visible
                 self.classifyTableView.contentOffset.y = CGFloat(55 * indexPath.row)
             }
             
+        //move down the tableview (the tableview is on the left ) to make the selected cell visible
             if cellR.origin.y - self.classifyTableView.frame.size.height > 0 {
                 
                 self.classifyTableView.contentOffset.y = cellR.origin.y - self.classifyTableView.frame.size.height+55
@@ -276,7 +280,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
     {
         if scrollView == self.groupTableView && isScrollSetSelect && isScrollClassiftyTable == false
         {
-              
+            // scroll the tableview on the right
             let indexPathArr:[IndexPath]? =  self.groupTableView.indexPathsForVisibleRows
             self.leftSectionSelected(IndexPath(row:indexPathArr![0].section, section: 0), withTableView: self.classifyTableView,didSelectClassifyTable: false)
         }
