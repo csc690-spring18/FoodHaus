@@ -6,6 +6,11 @@ class ResetPasswordViewController: UIViewController {
     // Outlets
     @IBOutlet weak var emailTextField: UITextField!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+    }
+    
     // Reset Password Action
     @IBAction func submitAction(_ sender: Any) {
         

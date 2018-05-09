@@ -9,6 +9,10 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+    }
     
     //Sign Up Action for email
     @IBAction func createAccountAction(_ sender: Any) {
@@ -25,9 +29,7 @@ class SignUpViewController: UIViewController {
                 Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                     
                     if error == nil {
-                        
-//                        self.dismiss(animated: true, completion: nil)
-                        
+                                                
                         self.performSegue(withIdentifier: "RegToInfo", sender: self)
 
                     } else {

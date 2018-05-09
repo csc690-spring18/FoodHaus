@@ -16,7 +16,8 @@ class EditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = Users(authData: user)
