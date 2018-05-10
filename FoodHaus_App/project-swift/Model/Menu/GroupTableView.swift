@@ -250,22 +250,20 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
                 
                 self.classifyTableView.contentOffset.y = cellR.origin.y - self.classifyTableView.frame.size.height+55
             }
-            
         }
-        
     }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
     {
         // fix iOS 11.0/iPhone X cannot scroll menu issue
         if #available(iOS 11.0, *) {
             scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.never
-        } else {
-            isScrollSetSelect = false
-            if scrollView == self.groupTableView
-            {
-                isScrollSetSelect = true
-                isScrollClassiftyTable = false
-            }
+        }
+        isScrollSetSelect = false
+        if scrollView == self.groupTableView
+        {
+            isScrollSetSelect = true
+            isScrollClassiftyTable = false
         }
     }
     
