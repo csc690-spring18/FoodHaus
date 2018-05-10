@@ -153,7 +153,6 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
                         }
                     }
                 }
-                
                 print(indexPath.section)
             }
             return extendCell
@@ -205,9 +204,8 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
     {
         if tableView == self.classifyTableView
         {
-            
             tableView.deselectRow(at: indexPath, animated: true)
-            self.leftSectionSelected(indexPath, withTableView: tableView,didSelectClassifyTable:true)
+            self.leftSectionSelected(indexPath, withTableView: tableView, didSelectClassifyTable: true)
         }
     }
     
@@ -228,7 +226,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
             tempView.backgroundColor = UIColor.red
             newCell?.addSubview(tempView)
             
-            //cancel the last choice
+            // cancel the last choice
             let oldIndexPath:IndexPath = IndexPath(row: currentExtendSection, section: 0)
             let oldCell:UITableViewCell? = tableView.cellForRow(at: oldIndexPath)
             let view:UIView? = oldCell?.viewWithTag(101)
@@ -258,21 +256,26 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
     {
-        isScrollSetSelect = false
-        if scrollView == self.groupTableView
-        {
-            isScrollSetSelect = true
-            isScrollClassiftyTable = false
+        // fix iOS 11.0/iPhone X cannot scroll menu issue
+        if #available(iOS 11.0, *) {
+            scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.never
+        } else {
+            isScrollSetSelect = false
+            if scrollView == self.groupTableView
+            {
+                isScrollSetSelect = true
+                isScrollClassiftyTable = false
+            }
         }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
-        if scrollView == self.groupTableView && isScrollSetSelect && isScrollClassiftyTable == false
-        {
-            // scroll the tableview on the right
-            let indexPathArr:[IndexPath]? =  self.groupTableView.indexPathsForVisibleRows
-            self.leftSectionSelected(IndexPath(row:indexPathArr![0].section, section: 0), withTableView: self.classifyTableView,didSelectClassifyTable: false)
-        }
+            if scrollView == self.groupTableView && isScrollSetSelect && isScrollClassiftyTable == false
+            {
+                // scroll the tableview on the right
+                let indexPathArr:[IndexPath]? =  self.groupTableView.indexPathsForVisibleRows
+                self.leftSectionSelected(IndexPath(row:indexPathArr![0].section, section: 0), withTableView: self.classifyTableView, didSelectClassifyTable: false)
+            }
     }
 }
