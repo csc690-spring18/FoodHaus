@@ -271,11 +271,11 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
-            if scrollView == self.groupTableView && isScrollSetSelect && isScrollClassiftyTable == false
-            {
-                // scroll the tableview on the right
-                let indexPathArr:[IndexPath]? =  self.groupTableView.indexPathsForVisibleRows
-                self.leftSectionSelected(IndexPath(row:indexPathArr![0].section, section: 0), withTableView: self.classifyTableView, didSelectClassifyTable: false)
-            }
+        if scrollView == self.groupTableView && isScrollSetSelect && isScrollClassiftyTable == false
+        {
+            // scroll the tableview on the right
+            let indexPathArr:[IndexPath]? =  self.groupTableView.indexPathsForVisibleRows
+            self.leftSectionSelected(IndexPath(row:indexPathArr![0].section, section: 0), withTableView: self.classifyTableView, didSelectClassifyTable: false)
+        }
     }
 }
