@@ -1,4 +1,4 @@
-# FoodHaus (Team members: Tyler Evans, Bo Li, Xiayi Wang, Wenjun Zhu)
+# FoodHaus 
 Milestone 4. This repository is for the completed final project of CSC 690. To see more work in process and code reviews please check Milestone 1~3.
 
 ## Team members
