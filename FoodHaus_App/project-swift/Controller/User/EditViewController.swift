@@ -7,7 +7,7 @@ import Firebase
 class EditViewController: UIViewController, UITextFieldDelegate {
     var user: Users!
     
-    // define references to database
+    // Define references to database
     let ref = Database.database().reference()
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -18,6 +18,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        // Retrieve cur user data
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = Users(authData: user)
@@ -51,7 +52,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        // save data into Database as json
+        // Save data into Database as json
         let email = self.user.getEmail
         guard
             let name = nameTextField.text,
@@ -61,9 +62,9 @@ class EditViewController: UIViewController, UITextFieldDelegate {
                 return
         }
         
-        // user has to fill in all info in their profile
+        // User has to fill in all info in their profile
         if (name != "" && address != "" && phone != "") {
-            self.ref.child("users").child(user.getUid).setValue(["email": email,
+            self.ref.child("users").child(user.getUid).child("profile").setValue(["email": email,
                                                                  "name": name,
                                                                  "phone": phone,
                                                                  "address": address])
@@ -71,7 +72,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             _ = navigationController?.popViewController(animated: true)
             
         } else {
-            // tells the user that they need to fill in all info
+            // Tells the user that they need to fill in all info
             let alertController = UIAlertController(title: "Oops", message: "Please fill in all information so that we could contact and delivery to you", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

@@ -6,7 +6,8 @@ import Firebase
 
 class AddUserInfoViewController: UIViewController, UITextFieldDelegate {
     var user: Users!
-    // define references to DB
+    
+    // Define references to DB
     let ref = Database.database().reference()
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -50,7 +51,7 @@ class AddUserInfoViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        // save data into Database as json
+        // Save data into Database as json
         let email = self.user.getEmail
         guard
             let name = nameTextField.text,
@@ -60,15 +61,15 @@ class AddUserInfoViewController: UIViewController, UITextFieldDelegate {
                 return
         }
         
-        // user has to fill in all info in their profile
+        // User has to fill in all info in their profile
         if (name != "" && address != "" && phone != "") {
-            self.ref.child("users").child(user.getUid).setValue(["email": email,
+            self.ref.child("users").child(user.getUid).child("profile").setValue(["email": email,
                                                                  "name": name,
                                                                  "phone": phone,
                                                                  "address": address])
             dismiss(animated: true, completion: nil)
         } else {
-            // tells the user that they need to fill in all info
+            // Tells the user that they need to fill in all info
             let alertController = UIAlertController(title: "Oops", message: "Please fill in all information so that we could contact and delivery to you", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

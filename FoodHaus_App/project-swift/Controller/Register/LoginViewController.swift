@@ -62,7 +62,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                 } else {
                     
-                    //Tells the user that there is an error and then gets firebase to tell them the error
+                    // Tells the user that there is an error and then gets firebase to tell them the error
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

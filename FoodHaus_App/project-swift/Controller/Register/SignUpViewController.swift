@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             present(alertController, animated: true, completion: nil)
             
         } else {
-            if (passwordTextField.text == repeatPasswordTextField.text) { // check whether repeat password is same as the original
+            if (passwordTextField.text == repeatPasswordTextField.text) { // Check whether repeat password is same as the original
                 Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                     
                     if error == nil {

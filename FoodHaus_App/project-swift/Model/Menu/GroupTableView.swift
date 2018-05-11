@@ -102,7 +102,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
             classifyCell.textLabel?.numberOfLines = 0
             classifyCell.backgroundColor = UIColor(red: 238, green: 238, blue: 238, alpha: 1)
             classifyCell.selectionStyle = UITableViewCellSelectionStyle.none
-            // the first option by default
+            // The first option by default
             if indexPath.row == currentExtendSection
             {
                 let tempView:UIView = UIView(frame:CGRect(x: 0,y: 0,width: 5,height: 55))
@@ -215,7 +215,7 @@ class GroupTableView: UIView,UITableViewDelegate,UITableViewDataSource {
         {
             if indexPath.row == currentExtendSection
             {
-                //if the current option is the same as last one, just return.
+                // if the current option is the same as last one, just return.
                 return ;
             }
             
