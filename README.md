@@ -3,14 +3,14 @@ Milestone 4. This repository is for the completed final project of CSC 690. To s
 
 ## Team members
 
-Tyler Evans (Team Lead)
-Bo Li (Tech Lead)
-Xiayi Wang
-Wenjun Zhu
+* Tyler Evans (Team Lead)
+* Bo Li (Tech Lead)
+* Xiayi Wang
+* Wenjun Zhu
 
 ## Summary
 
-* FoodHaus application is an iOS application designed for FoodHaus restaurant to create a more convinient way of ordering food for the customers. 
+* FoodHaus application is an iOS application designed for FoodHaus restaurant to create a more convinient way of ordering food for customers. 
 * This application has features like user login, checkout, when you're selecting the food you want, the application will save all the food you ordered and get ready for checkout. It also has a feature for you to create an account with FoodHaus, you email, address and phone number will be stored in our database.
 
 ## Features
@@ -31,3 +31,6 @@ Wenjun Zhu
 - [ ] Users shall be able to find their passwords if they forget, and passwords shall be sent to the their email addresses. (16 hours, Xiayi Wang)
 - [x] Users shall be able to reset their passwords as they wish. (16 hours, Xiayi Wang)
 - [ ] Users shall be able to contact administrator. (16 hours, Xiayi Wang)
+
+### New added features:
+- [x] Users shall be able to save their contact information for future use.
