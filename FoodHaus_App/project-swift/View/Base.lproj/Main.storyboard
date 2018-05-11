@@ -988,10 +988,10 @@
             </objects>
             <point key="canvasLocation" x="1137" y="2464"/>
         </scene>
-        <!--Edit-->
+        <!--Add Profile-->
         <scene sceneID="xQt-hv-30n">
             <objects>
-                <viewController title="Edit" id="n1M-Gq-9e8" customClass="AddUserInfoViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Profile" id="n1M-Gq-9e8" customClass="AddUserInfoViewController" customModule="project_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRk-8a-Jdp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
