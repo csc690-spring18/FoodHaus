@@ -34,7 +34,7 @@ class ConfirmViewController: UIViewController {
         }
     }
     
-    @IBAction func BackToMenuButton(_ sender: Any) {    // Can't go back to main menu
+    @IBAction func BackToMenuButton(_ sender: Any) {   
         self.navigationController?.popToRootViewController(animated: true)
     }
 }

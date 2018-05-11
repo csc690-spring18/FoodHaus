@@ -5,7 +5,7 @@ import FirebaseAuth
 class ProfileViewController: UIViewController {
     var user: Users!
     
-    // define references to database
+    // Define references to database
     let ref = Database.database().reference()
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -16,16 +16,17 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Retrieve cur user data
         Auth.auth().addStateDidChangeListener { auth, user in
             guard let user = user else { return }
             self.user = Users(authData: user)
         }
         
-        // retrieve current user's info from database
+        // Retrieve current user's info from database
         let userID = Auth.auth().currentUser?.uid
         
-        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            // get user value
+        ref.child("users").child(userID!).child("profile").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
             let value = snapshot.value as? NSDictionary
             self.nameLabel.text = value?["name"] as? String ?? ""
             self.emailLabel.text = value?["email"] as? String ?? ""

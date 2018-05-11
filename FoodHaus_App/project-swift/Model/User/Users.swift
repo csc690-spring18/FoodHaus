@@ -1,11 +1,10 @@
 import Foundation
 import Firebase
 
-struct Users {
+struct Users {  // Get user cur status via Firebase
     
     let uid: String
     let email: String
-    
     
     init(authData: User) {
         uid = authData.uid
