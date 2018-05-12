@@ -33,13 +33,6 @@ class MenuViewController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
     }
     
-    //    override func viewDidAppear(_ animated: Bool) {
-    //        let reInit = UserDefaults.standard.bool(forKey: "init")
-    //        if reInit {
-    //            self.initData()
-    //        }
-    //    }
-    
     func  initData()
     {
         // Product Name
