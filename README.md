@@ -27,10 +27,10 @@ Milestone 4. This repository is for the completed final project of CSC 690. To s
 
 ### Nice to have features:
 - [ ] Fuzzy string search shall be used to filter food items. (Tyler Evans)
-- [x] Administrator shall manage the database. (Tyler Evans)
+- [x] Administrator shall manage the database. (Bo Li, Tyler Evans)
 - [x] Users shall be able to find their passwords if they forget, and passwords shall be sent to the their email addresses. (Xiayi Wang)
-- [x] Users shall be able to reset their passwords as they wish. (Xiayi Wang)
-- [ ] Users shall be able to contact administrator. (Xiayi Wang)
+- [x] Users shall be able to reset their passwords as they wish. (Wenjun Zhu)
+- [x] Users shall be able to contact administrator. (Tyler Evans)
 
 ### New added features:
 - [x] Users shall be able to save their contact information for future use.  (Bo Li)
