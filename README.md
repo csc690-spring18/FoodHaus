@@ -16,21 +16,21 @@ Milestone 4. This repository is for the completed final project of CSC 690. To s
 ## Features
 
 ### Must have features:
-- [x] Users shall be able to browse through the site, but not have access to post or delete food item files. (16 hours, Bo Li)
-- [x] Users shall be able to create accounts and log in. (16 hours, Bo Li)
-- [x] Users shall be able to remove the food items they have ordered. (16 hours, Bo Li)
-- [x] Users shall be able to cancel the whole order at once. (16 hours, Wenjun Zhu)
-- [x] The app shall have a launch screen. (16 hours, Wenjun Zhu)
-- [x] The app shall present the Terms and Conditions and Privacy Policy during the registration process. (16 hours, Wenjun Zhu, Xiayi Wang)
-- [x] The site shall ask for username and password. (16 hours, Tyler Evans)
-- [x] Passwords shall be encrypted. (16 hours, Tyler Evans)
+- [x] Users shall be able to browse through the site, but not have access to post or delete food item files. (Bo Li)
+- [x] Users shall be able to create accounts and log in. (Bo Li)
+- [x] Users shall be able to remove the food items they have ordered. (Bo Li)
+- [x] Users shall be able to cancel the whole order at once. (Wenjun Zhu)
+- [x] The app shall have a launch screen. (Wenjun Zhu)
+- [x] The app shall present the Terms and Conditions and Privacy Policy during the registration process. (Wenjun Zhu, Xiayi Wang)
+- [x] The site shall ask for username and password. (Tyler Evans)
+- [x] Passwords shall be encrypted. (Tyler Evans)
 
 ### Nice to have features:
-- [ ] Fuzzy string search shall be used to filter food items. (16 hours, Tyler Evans)
-- [ ] Administrator shall manage the database. (16 hours, Xiayi Wang, Tyler Evans)
-- [ ] Users shall be able to find their passwords if they forget, and passwords shall be sent to the their email addresses. (16 hours, Xiayi Wang)
-- [x] Users shall be able to reset their passwords as they wish. (16 hours, Xiayi Wang)
-- [ ] Users shall be able to contact administrator. (16 hours, Xiayi Wang)
+- [ ] Fuzzy string search shall be used to filter food items. (Tyler Evans)
+- [x] Administrator shall manage the database. (Tyler Evans)
+- [x] Users shall be able to find their passwords if they forget, and passwords shall be sent to the their email addresses. (Xiayi Wang)
+- [x] Users shall be able to reset their passwords as they wish. (Xiayi Wang)
+- [ ] Users shall be able to contact administrator. (Xiayi Wang)
 
 ### New added features:
-- [x] Users shall be able to save their contact information for future use.
+- [x] Users shall be able to save their contact information for future use.  (Bo Li)
